@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Apprentice</string>
+    <string name="start">Начать</string>
+    <string name="back">Назад</string>
+    <string name="exit">Выйти</string>
+    <string name="level">Уровень:</string>
+</resources>
