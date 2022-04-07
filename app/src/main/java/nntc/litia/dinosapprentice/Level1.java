@@ -80,6 +80,18 @@ public class Level1 extends AppCompatActivity {
         });
         /* Обработка нажатия кнопки "назад" (Конец) */
 
+        /* Массив для прогресса игры-уровня (Начало) */
+        final int[] progress  = {
+                R.id.point1,
+                R.id.point2,
+                R.id.point3,
+                R.id.point4,
+                R.id.point5,
+                R.id.point6,
+                R.id.point7,
+                R.id.point8,};
+        /* Массив для прогресса игры-уровня (Конец) */
+
         /* Подключение анимации (Начало) */
         final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
@@ -133,7 +145,30 @@ public class Level1 extends AppCompatActivity {
                     // Касание картинки - приложить палец (Конец)
 
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
-                // Не касание картинки - отпустить палец (Начало)
+                    // Не касание картинки - отпустить палец (Начало)
+                    if (numLeft>numRight){
+                        // Если левое число больше правого
+                        if(count<8){
+                            count=count+1;
+                        }
+
+                        // Закрашивание прогресса серым цветом (Начало)
+                        for(int i=0; i<8; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        // Закрашивание прогресса серым цветом (Конец)
+
+                        // Закрашивание прогресса зеленым цветом и определение правильных ответов (Начало)
+                        for(int i=0; i<count; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                        // Закрашивание прогресса зеленым цветом и определение правильных ответов (Конец)
+                    } else {
+                        // Если левое число меньше правого
+                    }
+                    // Не касание картинки - отпустить палец (Конец)
                 }
 
                 /* Условие касания картинки (Конец) */
