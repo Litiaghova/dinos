@@ -239,6 +239,125 @@ public class Level1 extends AppCompatActivity {
             }
         });
         /* Обработка нажатия на левую картинку (Конец) */
+
+        /* Обработка нажатия на правую картинку (Начало) */
+        // Выбор именно setOnTouchListener, потому что нужно обработать два состояния, начало и конец прикосновения
+        img_right.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            // MotionEvent определяет касание пальцем экрана
+            public boolean onTouch(View view, MotionEvent event) {
+                /* Условие касания картинки (Начало) */
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                    // Касание картинки - приложить палец (Начало)
+
+                    // Блокировка левой картинки, если коснулись правой
+                    img_left.setEnabled(false);
+
+                    // Условие показателя верной-неверной картинки
+                    if (numLeft<numRight){
+                        // Если левое число больше правого, показать картинку "верно"
+                        img_right.setImageResource(R.drawable.img_true);
+                    } else {
+                        // Если левое число меньше правого, показать картинку "не верно"
+                        img_right.setImageResource(R.drawable.img_folse);
+                    }
+                    // Касание картинки - приложить палец (Конец)
+
+                }else if (event.getAction()==MotionEvent.ACTION_UP){
+                    // Не касание картинки - отпустить палец (Начало)
+                    if (numLeft<numRight){
+                        // Если правое число больше левого
+                        if(count<8){
+                            count=count+1;
+                        }
+
+                        // Закрашивание прогресса серым цветом (Начало)
+                        for(int i=0; i<8; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        // Закрашивание прогресса серым цветом (Конец)
+
+                        // Закрашивание прогресса зеленым цветом и определение правильных ответов (Начало)
+                        for(int i=0; i<count; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                        // Закрашивание прогресса зеленым цветом и определение правильных ответов (Конец)
+                    } else {
+                        // Если левое число меньше правого
+                        /* Игра не может уходить в минус, поэтому если игрок ошибается при нуле, то ноль остается таким же */
+                        if (count>0){
+                            /* Игра не может уходить в минус, поэтому если игрок ошибается при единице, то число смещается на ноль */
+                            if(count==1){
+                                count=0;
+                            }
+                            else {
+                                count=count-2;
+                            }
+                        }
+                        // Закрашивание прогресса серым цветом (Начало)
+                        for(int i=0; i<7; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        // Закрашивание прогресса серым цветом (Конец)
+
+                        // Закрашивание прогресса зеленым цветом и определение правильных ответов (Начало)
+                        for(int i=0; i<count; i++){
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                        // Закрашивание прогресса зеленым цветом и определение правильных ответов (Конец)
+                    }
+                    // Не касание картинки - отпустить палец (Конец)
+
+                    // Если счётчик достиг максимума
+                    if (count==8){
+                        // Выход из уровня
+                    } else {
+
+                        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
+                        // Генерация случайного числа от 0-9
+                        numLeft = random.nextInt(10);
+                        // Вызов картинки из массива
+                        img_left.setImageResource(array.images1[numLeft]);
+                        // Запуск анимации
+                        img_left.startAnimation(a);
+                        // Вызов текста из массива
+                        text_left.setText(array.texts1[numLeft]);
+                        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
+
+                        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+                        // Генерация случайного числа от 0-9
+                        numRight = random.nextInt(10);
+
+                        // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
+                        // Пока левое число равно правому, генерировать новое правое число
+                        while (numLeft == numRight){
+                            numRight = random.nextInt(10);
+                        }
+                        // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
+                        // Вызов картинки из массива
+                        img_right.setImageResource(array.images1[numRight]);
+                        // Запуск анимации
+                        img_right.startAnimation(a);
+                        // Вызов текста из массива
+                        text_right.setText(array.texts1[numRight]);
+                        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+
+                        // Включение левой картинки
+                        img_left.setEnabled(true);
+
+                    }
+                }
+
+                /* Условие касания картинки (Конец) */
+
+                return true;
+            }
+        });
+        /* Обработка нажатия на правую картинку (Конец) */
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */
