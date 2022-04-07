@@ -3,8 +3,10 @@ package nntc.litia.dinosapprentice;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 
@@ -30,6 +32,24 @@ public class Level1 extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         /* Размещение игрового экрана по всему объему (Конец) */
 
+        /* Обработка нажатия кнопки "назад" (Начало) */
+        Button button_back = (Button) findViewById(R.id.button_back);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Начало конструкции
+                try {
+                    // Вернуться к выбору уровня (Начало)
+                    Intent intent = new Intent(Level1.this, Level_Menu.class); // СОздание намерения перехода
+                    startActivity(intent); // Запуск намерения
+                    finish(); // Закрыть этот класс
+                    // Вернуться к выбору уровня (Конец)
+                }catch (Exception e){
+                }
+                // Конец конструкции
+            }
+        });
+        /* Обработка нажатия кнопки "назад" (Конец) */
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */
@@ -43,6 +63,8 @@ public class Level1 extends AppCompatActivity {
         }catch (Exception e){
         }
         // Конец конструкции
+
+
     }
     /* Обработка нажатия системной кнопки "назад" (Конец) */
 }
