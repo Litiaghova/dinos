@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class Level1 extends AppCompatActivity {
@@ -16,6 +17,13 @@ public class Level1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_level);
+
+        /* Установка текста из файла (Начало) */
+        // Создание переменной для работы с текстом
+        TextView text_levels = findViewById(R.id.text_levels);
+        // Установка текста из файла "string"
+        text_levels.setText(R.string.level1);
+        /* Установка текста из файла (Конец) */
 
         // Код обращения к картинке по id (Левая)
         final ImageView img_left = (ImageView)findViewById(R.id.img_left);
