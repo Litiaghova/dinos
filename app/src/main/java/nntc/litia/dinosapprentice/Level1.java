@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +25,8 @@ public class Level1 extends AppCompatActivity {
     Array array = new Array();
     // Генератор случайности
     Random random = new Random();
+    // Переменная для счётчика правильных ответов
+    public int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +78,10 @@ public class Level1 extends AppCompatActivity {
             }
         });
         /* Обработка нажатия кнопки "назад" (Конец) */
+
+        /* Подключение анимации (Начало) */
+        final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
+        /* Подключение анимации (Конец) */
 
         /* Работа 1-го уровня, левой стороны (Начало) */
         // Генерация случайного числа от 0-9

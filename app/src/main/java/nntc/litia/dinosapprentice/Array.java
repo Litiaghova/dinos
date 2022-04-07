@@ -31,7 +31,6 @@ public class Array {
             R.string.lvl1text8,
             R.string.lvl1text9,
     };
-
     /* Массив для первого уровня (Конец) */
 
 }
