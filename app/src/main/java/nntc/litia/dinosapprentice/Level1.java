@@ -10,8 +10,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 
 public class Level1 extends AppCompatActivity {
+
+    // Переменная - это место в памяти, в котором будет хранится информация
+    // public - указывает, что доступ к переменной будет открытым
+    public int numLeft; // Переменная для работы с левой картинкой + текст
+    public int numRight; // Переменная для работы с правой картинкой + текст
+    // Выделение памяти для работы массива
+    Array array = new Array();
+    // Генератор случайности
+    Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +45,11 @@ public class Level1 extends AppCompatActivity {
         final ImageView img_right = (ImageView)findViewById(R.id.img_right);
         // Код для скругления углов этой картинки
         img_right.setClipToOutline(true);
+
+        // Путь к левой части уровня (Текст)
+        final TextView text_left = findViewById(R.id.text_left);
+        // Путь к правой части уровня (Текст)
+        final TextView text_right = findViewById(R.id.text_right);
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
@@ -58,6 +74,32 @@ public class Level1 extends AppCompatActivity {
             }
         });
         /* Обработка нажатия кнопки "назад" (Конец) */
+
+        /* Работа 1-го уровня, левой стороны (Начало) */
+        // Генерация случайного числа от 0-9
+        numLeft = random.nextInt(10);
+        // Вызов картинки из массива
+        img_left.setImageResource(array.images1[numLeft]);
+        // Вызов текста из массива
+        text_left.setText(array.texts1[numLeft]);
+        /* Работа 1-го уровня, левой стороны (Конец) */
+
+        /* Работа 1-го уровня, правой стороны (Начало) */
+        // Генерация случайного числа от 0-9
+        numRight = random.nextInt(10);
+
+        // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
+        // Пока левое число равно правому, генерировать новое правое число
+        while (numLeft == numRight){
+            numRight = random.nextInt(10);
+        }
+        // Вызов картинки из массива
+        img_right.setImageResource(array.images1[numRight]);
+        // Вызов текста из массива
+        text_right.setText(array.texts1[numRight]);
+        // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
+
+        /* Работа 1-го уровня, правой стороны (Конец) */
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */

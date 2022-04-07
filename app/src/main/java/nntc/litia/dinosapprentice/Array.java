@@ -17,8 +17,6 @@ public class Array {
             R.drawable.onelevel_eight,
             R.drawable.onelevel_nine,
     };
-    // Массив хранящий в себе значение цифры
-    final int[] power1 = {0,1,2,3,4,5,6,7,8,9,};
 
     // Массив хранящий в себе название цифры
     final int[] texts1 = {
