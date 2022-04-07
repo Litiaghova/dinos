@@ -3,6 +3,7 @@ package nntc.litia.dinosapprentice;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -83,16 +84,16 @@ public class Level1 extends AppCompatActivity {
         final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
-        /* Работа 1-го уровня, левой стороны (Начало) */
+        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
         // Генерация случайного числа от 0-9
         numLeft = random.nextInt(10);
         // Вызов картинки из массива
         img_left.setImageResource(array.images1[numLeft]);
         // Вызов текста из массива
         text_left.setText(array.texts1[numLeft]);
-        /* Работа 1-го уровня, левой стороны (Конец) */
+        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
-        /* Работа 1-го уровня, правой стороны (Начало) */
+        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
         // Генерация случайного числа от 0-9
         numRight = random.nextInt(10);
 
@@ -106,8 +107,41 @@ public class Level1 extends AppCompatActivity {
         // Вызов текста из массива
         text_right.setText(array.texts1[numRight]);
         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
+        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
 
-        /* Работа 1-го уровня, правой стороны (Конец) */
+        /* Обработка нажатия на левую картинку (Начало) */
+        // Выбор именно setOnTouchListener, потому что нужно обработать два состояния, начало и конец прикосновения
+        img_left.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            // MotionEvent определяет касание пальцем экрана
+            public boolean onTouch(View view, MotionEvent event) {
+                /* Условие касания картинки (Начало) */
+                if (event.getAction()==MotionEvent.ACTION_DOWN){
+                // Касание картинки - приложить палец (Начало)
+
+                    // Блокировка правой картинки, если коснулись левой
+                    img_right.setEnabled(false);
+
+                    // Условие показателя верной-неверной картинки
+                    if (numLeft>numRight){
+                        // Если левое число больше правого, показать картинку "верно"
+                        img_left.setImageResource(R.drawable.img_true);
+                    } else {
+                        // Если левое число меньше правого, показать картинку "не верно"
+                        img_left.setImageResource(R.drawable.img_folse);
+                    }
+                    // Касание картинки - приложить палец (Конец)
+
+                }else if (event.getAction()==MotionEvent.ACTION_UP){
+                // Не касание картинки - отпустить палец (Начало)
+                }
+
+                /* Условие касания картинки (Конец) */
+
+                return true;
+            }
+        });
+        /* Обработка нажатия на левую картинку (Конец) */
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */
