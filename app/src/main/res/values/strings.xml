@@ -8,5 +8,7 @@
     <string name="level2">Уровень: 2</string>
     <string name="level3">Уровень: 3</string>
     <string name="level4">Уровень: 4</string>
+    <string name="dialogtext1">Описание текста 1-первого уровня диалогового окна</string>
+    <string name="btndialogcontinue">Продолжить</string>
 
 </resources>

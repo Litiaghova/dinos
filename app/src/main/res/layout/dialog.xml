@@ -29,6 +29,41 @@
             android:layout_gravity="end">
 
         </TextView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/dialogimg"
+            android:src="@drawable/dialog2"
+            android:layout_weight="60"
+            android:layout_marginTop="10dp"
+            >
+
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/textdialog"
+            android:text="@string/dialogtext1"
+            android:layout_weight="30"
+            android:textColor="@color/black95"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+        </TextView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/btndialogcontinue"
+            android:background="@drawable/style_btn_stroke_black95"
+            android:layout_weight="10"
+            android:text="@string/btndialogcontinue"
+            android:padding="5dp"
+            android:textAllCaps="false"
+            android:textColor="@color/black95"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            ></Button>
     </LinearLayout>
 
 </LinearLayout>
