@@ -4,8 +4,8 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -19,10 +19,10 @@ import android.widget.TextView;
 import java.util.Random;
 
 
-public class Level1 extends AppCompatActivity {
+public class Level2 extends AppCompatActivity {
 
     Dialog dialog;
-    Dialog dialogend;
+    Dialog dialogEnd;
 
     // Переменная - это место в памяти, в котором будет хранится информация
     // public - указывает, что доступ к переменной будет открытым
@@ -67,13 +67,23 @@ public class Level1 extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         /* Размещение игрового экрана по всему объему (Конец) */
 
-        /* Вызов диалогового окна 1-го уровня (Начало) */
+        /* Вызов диалогового окна 2-го уровня (Начало) */
 
         dialog = new Dialog(this); // Создание нового диалогового окна
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialog.setContentView(R.layout.previewdialog); // Путь к макету даилогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
+
+        // Установка картинки в диалоговое окно (Начало)
+        ImageView previewimg = (ImageView)dialog.findViewById(R.id.previewimg);
+        previewimg.setImageResource(R.drawable.dialog2);
+        // Установка картинки в диалоговое окно (Конец)
+
+        // Установка задания в диалоговое окно (Начало)
+        TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
+        textdescription.setText(R.string.dialogtext2_1);
+        // Установка задания в диалоговое окно (Конец)
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
         TextView btnClose = (TextView)dialog.findViewById(R.id.btnClose);
@@ -84,7 +94,7 @@ public class Level1 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level1.this, Level_Menu.class);
+                    Intent intent = new Intent(Level2.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -112,17 +122,22 @@ public class Level1 extends AppCompatActivity {
 
         dialog.show(); // Показ диалогового окна
 
-        /* Вызов диалогового окна 1-го уровня (Конец) */
+        /* Вызов диалогового окна 2-го уровня (Конец) */
 
         // -----------------------------------------
-        dialogend = new Dialog(this); // Создание нового диалогового окна
-        dialogend.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
-        dialogend.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
-        dialogend.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
-        dialogend.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
+        dialogEnd = new Dialog(this); // Создание нового диалогового окна
+        dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
+        dialogEnd.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
+        dialogEnd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
+        dialogEnd.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
+
+        /* Текст в конце на диалоговм окне (Начало) */
+        TextView textDescriptionEnd = (TextView)dialogEnd.findViewById(R.id.text2);
+        textDescriptionEnd.setText(R.string.dialogtext2_2);
+        /* Текст в конце на диалоговм окне (Конец) */
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
-        TextView btnClose2 = (TextView)dialogend.findViewById(R.id.btnClose);
+        TextView btnClose2 = (TextView)dialogEnd.findViewById(R.id.btnClose);
         btnClose2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,7 +145,7 @@ public class Level1 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level1.this, Level_Menu.class);
+                    Intent intent = new Intent(Level2.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -139,19 +154,19 @@ public class Level1 extends AppCompatActivity {
 
                 }
                 // Закрытие диалогового окна
-                dialogend.dismiss();
+                dialogEnd.dismiss();
                 /* Обрабатывание нажатия кнопки (Конец) */
             }
         });
         /* Кнопка закрытия диалогового окна - Х (Конец) */
 
         /* Кнопка продолжить - диалоговое окно (Начало) */
-        Button btndialogcontinue2 = (Button)dialogend.findViewById(R.id.btndialogcontinue);
+        Button btndialogcontinue2 = (Button)dialogEnd.findViewById(R.id.btndialogcontinue);
         btndialogcontinue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level1.this, Level2.class);
+                    Intent intent = new Intent(Level2.this, Level2.class);
                     startActivity(intent);
                     finish();
                 }
@@ -159,7 +174,7 @@ public class Level1 extends AppCompatActivity {
 
                 }
                 // Закрытие диалогового окна
-                dialogend.dismiss();
+                dialogEnd.dismiss();
             }
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
@@ -175,7 +190,7 @@ public class Level1 extends AppCompatActivity {
                 // Начало конструкции
                 try {
                     // Вернуться к выбору уровня (Начало)
-                    Intent intent = new Intent(Level1.this, Level_Menu.class); // СОздание намерения перехода
+                    Intent intent = new Intent(Level2.this, Level_Menu.class); // СОздание намерения перехода
                     startActivity(intent); // Запуск намерения
                     finish(); // Закрыть этот класс
                     // Вернуться к выбору уровня (Конец)
@@ -199,16 +214,16 @@ public class Level1 extends AppCompatActivity {
         /* Массив для прогресса игры-уровня (Конец) */
 
         /* Подключение анимации (Начало) */
-        final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
         /* Подготовка работы 1-го уровня, левой стороны (Начало) */
         // Генерация случайного числа от 0-9
         numLeft = random.nextInt(10);
         // Вызов картинки из массива
-        img_left.setImageResource(array.images1[numLeft]);
+        img_left.setImageResource(array.images2[numLeft]);
         // Вызов текста из массива
-        text_left.setText(array.texts1[numLeft]);
+        text_left.setText(array.texts2[numLeft]);
         /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
         /* Подготовка работы 1-го уровня, правой стороны (Начало) */
@@ -222,9 +237,9 @@ public class Level1 extends AppCompatActivity {
         }
         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
         // Вызов картинки из массива
-        img_right.setImageResource(array.images1[numRight]);
+        img_right.setImageResource(array.images2[numRight]);
         // Вызов текста из массива
-        text_right.setText(array.texts1[numRight]);
+        text_right.setText(array.texts2[numRight]);
         /* Подготовка работы 1-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
@@ -302,21 +317,21 @@ public class Level1 extends AppCompatActivity {
                     // Если счётчик достиг максимума
                     if (count==8){
                         // Выход из уровня
-                        dialogend.show(); // Показ диалогового окна
+                        dialogEnd.show(); // Показ диалогового окна
                     } else {
 
-                        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numLeft = random.nextInt(10);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images1[numLeft]);
+                        img_left.setImageResource(array.images2[numLeft]);
                         // Запуск анимации
                         img_left.startAnimation(a);
                         // Вызов текста из массива
-                        text_left.setText(array.texts1[numLeft]);
-                        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
+                        text_left.setText(array.texts2[numLeft]);
+                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numRight = random.nextInt(10);
 
@@ -327,11 +342,11 @@ public class Level1 extends AppCompatActivity {
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images1[numRight]);
+                        img_right.setImageResource(array.images2[numRight]);
                         // Запуск анимации
                         img_right.startAnimation(a);
                         // Вызов текста из массива
-                        text_right.setText(array.texts1[numRight]);
+                        text_right.setText(array.texts2[numRight]);
                         /* Подготовка работы 1-го уровня, правой стороны (Конец) */
 
                         // Включение правой картинки
@@ -422,21 +437,21 @@ public class Level1 extends AppCompatActivity {
                     // Если счётчик достиг максимума
                     if (count==8){
                         // Выход из уровня
-                        dialogend.show(); // Показ диалогового окна
+                        dialogEnd.show(); // Показ диалогового окна
                     } else {
 
-                        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numLeft = random.nextInt(10);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images1[numLeft]);
+                        img_left.setImageResource(array.images2[numLeft]);
                         // Запуск анимации
                         img_left.startAnimation(a);
                         // Вызов текста из массива
-                        text_left.setText(array.texts1[numLeft]);
-                        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
+                        text_left.setText(array.texts2[numLeft]);
+                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numRight = random.nextInt(10);
 
@@ -447,12 +462,12 @@ public class Level1 extends AppCompatActivity {
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images1[numRight]);
+                        img_right.setImageResource(array.images2[numRight]);
                         // Запуск анимации
                         img_right.startAnimation(a);
                         // Вызов текста из массива
-                        text_right.setText(array.texts1[numRight]);
-                        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+                        text_right.setText(array.texts2[numRight]);
+                        /* Подготовка работы 2-го уровня, правой стороны (Конец) */
 
                         // Включение левой картинки
                         img_left.setEnabled(true);
@@ -473,7 +488,7 @@ public class Level1 extends AppCompatActivity {
     public void onBackPressed(){
         // Начало конструкции
         try {
-            Intent intent = new Intent(Level1.this, Level_Menu.class);
+            Intent intent = new Intent(Level2.this, Level_Menu.class);
             startActivity(intent);
             finish();
         }catch (Exception e){

@@ -49,14 +49,24 @@ public class Level_Menu extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }catch (Exception e){
-
                 }
             }
         });
         /* Кнопка для перехода на 1-первый уровень (Конец) */
 
         /* Кнопка для перехода на 2-второй уровень (Начало) */
-
+        TextView textView2  = (TextView)findViewById(R.id.textView2);
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent intent = new Intent(Level_Menu.this, Level2.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e){
+                }
+            }
+        });
         /* Кнопка для перехода на 2-второй уровень (Конец) */
 
         /* Кнопка для перехода на 3-третий уровень (Начало) */

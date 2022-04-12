@@ -8,6 +8,7 @@
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/drawable/btn_stroke_buttonoff_press_withe.xml" value="0.2324074074074074" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/drawable/button_level_menu_together.xml" value="0.247" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/drawable/button_stroke_black95_press_white_together.xml" value="0.188" />
+        <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/drawable/dialog1.xml" value="0.1675" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/drawable/style_btn_black95.xml" value="0.247" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/drawable/style_btn_clik.xml" value="0.2324074074074074" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/drawable/style_btn_stroke_black95.xml" value="0.188" />
@@ -23,6 +24,9 @@
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/dialog.xml" value="0.23828125" />
+        <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/dialog1.xml" value="0.23828125" />
+        <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/dialog2.xml" value="0.23828125" />
+        <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/dialogend.xml" value="0.190625" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/forest.xml" value="0.1" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/gamelevels.xml" value="0.1" />
         <entry key="..\:/Users/litia/AndroidStudioProjects/DinosApprentice/app/src/main/res/layout/level_menu.xml" value="0.2" />
