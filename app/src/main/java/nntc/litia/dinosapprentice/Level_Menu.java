@@ -70,12 +70,94 @@ public class Level_Menu extends AppCompatActivity {
         /* Кнопка для перехода на 2-второй уровень (Конец) */
 
         /* Кнопка для перехода на 3-третий уровень (Начало) */
-
+        TextView textView3  = (TextView)findViewById(R.id.textView3);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent intent = new Intent(Level_Menu.this, Level3.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e){
+                }
+            }
+        });
         /* Кнопка для перехода на 3-третий уровень (Конец) */
 
         /* Кнопка для перехода на 4-четвертый уровень (Начало) */
-
+        TextView textView4  = (TextView)findViewById(R.id.textView4);
+        textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent intent = new Intent(Level_Menu.this, Level4.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e){
+                }
+            }
+        });
         /* Кнопка для перехода на 4-четвертый уровень (Конец) */
+
+        /* Кнопка для перехода на 5-четвертый уровень (Начало) */
+        TextView textView5  = (TextView)findViewById(R.id.textView5);
+        textView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent intent = new Intent(Level_Menu.this, Level5.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e){
+                }
+            }
+        });
+        /* Кнопка для перехода на 5-четвертый уровень (Конец) */
+
+        /* Кнопка для перехода на 6-четвертый уровень (Начало) */
+        TextView textView6  = (TextView)findViewById(R.id.textView6);
+        textView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent intent = new Intent(Level_Menu.this, Level6.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e){
+                }
+            }
+        });
+        /* Кнопка для перехода на 6-четвертый уровень (Конец) */
+
+        /* Кнопка для перехода на 7-четвертый уровень (Начало) */
+        TextView textView7  = (TextView)findViewById(R.id.textView7);
+        textView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent intent = new Intent(Level_Menu.this, Level7.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e){
+                }
+            }
+        });
+        /* Кнопка для перехода на 7-четвертый уровень (Конец) */
+
+        /* Кнопка для перехода на 8-четвертый уровень (Начало) */
+        TextView textView8  = (TextView)findViewById(R.id.textView8);
+        textView8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent intent = new Intent(Level_Menu.this, Level8.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e){
+                }
+            }
+        });
+        /* Кнопка для перехода на 8-четвертый уровень (Конец) */
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */

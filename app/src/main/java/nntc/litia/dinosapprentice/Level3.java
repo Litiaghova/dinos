@@ -19,7 +19,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 
-public class Level2 extends AppCompatActivity {
+public class Level3 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
@@ -82,7 +82,7 @@ public class Level2 extends AppCompatActivity {
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
-        textdescription.setText(R.string.dialogtext2_1);
+        textdescription.setText(R.string.dialogtext3_1);
         // Установка задания в диалоговое окно (Конец)
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
@@ -94,7 +94,7 @@ public class Level2 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level2.this, Level_Menu.class);
+                    Intent intent = new Intent(Level3.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -133,7 +133,7 @@ public class Level2 extends AppCompatActivity {
 
         /* Текст в конце на диалоговм окне (Начало) */
         TextView textDescriptionEnd = (TextView)dialogEnd.findViewById(R.id.text2);
-        textDescriptionEnd.setText(R.string.dialogtext2_2);
+        textDescriptionEnd.setText(R.string.dialogtext3_2);
         /* Текст в конце на диалоговм окне (Конец) */
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
@@ -145,7 +145,7 @@ public class Level2 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level2.this, Level_Menu.class);
+                    Intent intent = new Intent(Level3.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -166,7 +166,7 @@ public class Level2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level2.this, Level3.class);
+                    Intent intent = new Intent(Level3.this, Level4.class);
                     startActivity(intent);
                     finish();
                 }
@@ -190,7 +190,7 @@ public class Level2 extends AppCompatActivity {
                 // Начало конструкции
                 try {
                     // Вернуться к выбору уровня (Начало)
-                    Intent intent = new Intent(Level2.this, Level_Menu.class); // СОздание намерения перехода
+                    Intent intent = new Intent(Level3.this, Level_Menu.class); // СОздание намерения перехода
                     startActivity(intent); // Запуск намерения
                     finish(); // Закрыть этот класс
                     // Вернуться к выбору уровня (Конец)
@@ -214,16 +214,16 @@ public class Level2 extends AppCompatActivity {
         /* Массив для прогресса игры-уровня (Конец) */
 
         /* Подключение анимации (Начало) */
-        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level3.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
         /* Подготовка работы 1-го уровня, левой стороны (Начало) */
         // Генерация случайного числа от 0-9
         numLeft = random.nextInt(10);
         // Вызов картинки из массива
-        img_left.setImageResource(array.images2[numLeft]);
+        img_left.setImageResource(array.images3[numLeft]);
         // Вызов текста из массива
-        text_left.setText(array.texts2[numLeft]);
+        text_left.setText(array.texts3[numLeft]);
         /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
         /* Подготовка работы 1-го уровня, правой стороны (Начало) */
@@ -237,9 +237,9 @@ public class Level2 extends AppCompatActivity {
         }
         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
         // Вызов картинки из массива
-        img_right.setImageResource(array.images2[numRight]);
+        img_right.setImageResource(array.images3[numRight]);
         // Вызов текста из массива
-        text_right.setText(array.texts2[numRight]);
+        text_right.setText(array.texts3[numRight]);
         /* Подготовка работы 1-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
@@ -324,11 +324,11 @@ public class Level2 extends AppCompatActivity {
                         // Генерация случайного числа от 0-9
                         numLeft = random.nextInt(10);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images2[numLeft]);
+                        img_left.setImageResource(array.images3[numLeft]);
                         // Запуск анимации
                         img_left.startAnimation(a);
                         // Вызов текста из массива
-                        text_left.setText(array.texts2[numLeft]);
+                        text_left.setText(array.texts3[numLeft]);
                         /* Подготовка работы 2-го уровня, левой стороны (Конец) */
 
                         /* Подготовка работы 2-го уровня, правой стороны (Начало) */
@@ -342,11 +342,11 @@ public class Level2 extends AppCompatActivity {
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images2[numRight]);
+                        img_right.setImageResource(array.images3[numRight]);
                         // Запуск анимации
                         img_right.startAnimation(a);
                         // Вызов текста из массива
-                        text_right.setText(array.texts2[numRight]);
+                        text_right.setText(array.texts3[numRight]);
                         /* Подготовка работы 1-го уровня, правой стороны (Конец) */
 
                         // Включение правой картинки
@@ -444,11 +444,11 @@ public class Level2 extends AppCompatActivity {
                         // Генерация случайного числа от 0-9
                         numLeft = random.nextInt(10);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images2[numLeft]);
+                        img_left.setImageResource(array.images3[numLeft]);
                         // Запуск анимации
                         img_left.startAnimation(a);
                         // Вызов текста из массива
-                        text_left.setText(array.texts2[numLeft]);
+                        text_left.setText(array.texts3[numLeft]);
                         /* Подготовка работы 2-го уровня, левой стороны (Конец) */
 
                         /* Подготовка работы 2-го уровня, правой стороны (Начало) */
@@ -462,11 +462,11 @@ public class Level2 extends AppCompatActivity {
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images2[numRight]);
+                        img_right.setImageResource(array.images3[numRight]);
                         // Запуск анимации
                         img_right.startAnimation(a);
                         // Вызов текста из массива
-                        text_right.setText(array.texts2[numRight]);
+                        text_right.setText(array.texts3[numRight]);
                         /* Подготовка работы 2-го уровня, правой стороны (Конец) */
 
                         // Включение левой картинки
@@ -488,7 +488,7 @@ public class Level2 extends AppCompatActivity {
     public void onBackPressed(){
         // Начало конструкции
         try {
-            Intent intent = new Intent(Level2.this, Level_Menu.class);
+            Intent intent = new Intent(Level3.this, Level_Menu.class);
             startActivity(intent);
             finish();
         }catch (Exception e){

@@ -13,5 +13,16 @@
     <string name="btndialogcontinue">Продолжить</string>
     <string name="dialogtext2_1">выбирете угол больше</string>
     <string name="dialogtext2_2">вы прошли 2 уровень</string>
-
+    <string name="dialogtext3_1">выбирете животное больше</string>
+    <string name="dialogtext3_2">вы прошли 3 уровень</string>
+    <string name="dialogtext4_1">выбирете планету дальше от солнца</string>
+    <string name="dialogtext4_2">вы прошли 4 уровень</string>
+    <string name="dialogtext5_1">выбирете более новую эпоху по профессии</string>
+    <string name="dialogtext5_2">вы прошли 5 уровень</string>
+    <string name="dialogtext6_1">выбирете теплый цвет</string>
+    <string name="dialogtext6_2">вы прошли 6 уровень</string>
+    <string name="dialogtext7_1">выбирете более ранее изображение языка</string>
+    <string name="dialogtext7_2">вы прошли 7 уровень</string>
+    <string name="dialogtext8_1">выбирете более новую эпоху по профессии</string>
+    <string name="dialogtext8_2">вы прошли 8 уровень</string>
 </resources>

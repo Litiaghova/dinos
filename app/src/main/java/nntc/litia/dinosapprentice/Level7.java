@@ -19,7 +19,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 
-public class Level2 extends AppCompatActivity {
+public class Level7 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
@@ -94,7 +94,7 @@ public class Level2 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level2.this, Level_Menu.class);
+                    Intent intent = new Intent(Level7.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -145,7 +145,7 @@ public class Level2 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level2.this, Level_Menu.class);
+                    Intent intent = new Intent(Level7.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -166,7 +166,7 @@ public class Level2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level2.this, Level3.class);
+                    Intent intent = new Intent(Level7.this, Level3.class);
                     startActivity(intent);
                     finish();
                 }
@@ -190,7 +190,7 @@ public class Level2 extends AppCompatActivity {
                 // Начало конструкции
                 try {
                     // Вернуться к выбору уровня (Начало)
-                    Intent intent = new Intent(Level2.this, Level_Menu.class); // СОздание намерения перехода
+                    Intent intent = new Intent(Level7.this, Level_Menu.class); // СОздание намерения перехода
                     startActivity(intent); // Запуск намерения
                     finish(); // Закрыть этот класс
                     // Вернуться к выбору уровня (Конец)
@@ -214,7 +214,7 @@ public class Level2 extends AppCompatActivity {
         /* Массив для прогресса игры-уровня (Конец) */
 
         /* Подключение анимации (Начало) */
-        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level7.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
         /* Подготовка работы 1-го уровня, левой стороны (Начало) */
@@ -488,7 +488,7 @@ public class Level2 extends AppCompatActivity {
     public void onBackPressed(){
         // Начало конструкции
         try {
-            Intent intent = new Intent(Level2.this, Level_Menu.class);
+            Intent intent = new Intent(Level7.this, Level_Menu.class);
             startActivity(intent);
             finish();
         }catch (Exception e){

@@ -64,4 +64,166 @@ public class Array {
     };
     /* Массив для 2-второго уровня (Конец) */
 
+    /* Массивы для 3-второго уровня (Начало) */
+    // final - ключевое слово, разрешает использовать перменную, но запрещает изменять её
+    // Массив хранящий в себе картинку углов
+    final int[] images3 = {
+            R.drawable.lvl3_0,
+            R.drawable.lvl3_1,
+            R.drawable.lvl3_2,
+            R.drawable.lvl3_3,
+            R.drawable.lvl3_4,
+            R.drawable.lvl3_5,
+            R.drawable.lvl3_6,
+            R.drawable.lvl3_7,
+            R.drawable.lvl3_8,
+            R.drawable.lvl3_9,
+    };
+
+    // Массив хранящий в себе название углов
+    final int[] texts3 = {
+            R.string.lvl3text0,
+            R.string.lvl3text1,
+            R.string.lvl3text2,
+            R.string.lvl3text3,
+            R.string.lvl3text4,
+            R.string.lvl3text5,
+            R.string.lvl3text6,
+            R.string.lvl3text7,
+            R.string.lvl3text8,
+            R.string.lvl3text9,
+    };
+    /* Массив для 3-второго уровня (Конец) */
+
+    /* Массивы для 4-второго уровня (Начало) */
+    // final - ключевое слово, разрешает использовать перменную, но запрещает изменять её
+    // Массив хранящий в себе картинку углов
+    final int[] images4 = {
+            R.drawable.lvl4_0,
+            R.drawable.lvl4_1,
+            R.drawable.lvl4_2,
+            R.drawable.lvl4_3,
+            R.drawable.lvl4_4,
+            R.drawable.lvl4_5,
+            R.drawable.lvl4_6,
+            R.drawable.lvl4_7,
+
+    };
+
+    // Массив хранящий в себе название углов
+    final int[] texts4 = {
+            R.string.lvl4text0,
+            R.string.lvl4text1,
+            R.string.lvl4text2,
+            R.string.lvl4text3,
+            R.string.lvl4text4,
+            R.string.lvl4text5,
+            R.string.lvl4text6,
+            R.string.lvl4text7,
+
+    };
+    /* Массив для 4-второго уровня (Конец) */
+
+    /* Массивы для 5-второго уровня (Начало) */
+    // final - ключевое слово, разрешает использовать перменную, но запрещает изменять её
+    // Массив хранящий в себе картинку углов
+    final int[] images5 = {
+            R.drawable.lvl5_0,
+            R.drawable.lvl5_1,
+            R.drawable.lvl5_2,
+            R.drawable.lvl5_3,
+            R.drawable.lvl5_4,
+            R.drawable.lvl5_5,
+            R.drawable.lvl5_6,
+            R.drawable.lvl5_7,
+
+    };
+
+    // Массив хранящий в себе название углов
+    final int[] texts5 = {
+            R.string.lvl5text0,
+            R.string.lvl5text1,
+            R.string.lvl5text2,
+            R.string.lvl5text3,
+            R.string.lvl5text4,
+            R.string.lvl5text5,
+            R.string.lvl5text6,
+            R.string.lvl5text7,
+
+    };
+    /* Массив для 5-второго уровня (Конец) */
+
+    /* Массивы для 6-второго уровня (Начало) */
+    // final - ключевое слово, разрешает использовать перменную, но запрещает изменять её
+    // Массив хранящий в себе картинку углов
+    final int[] images6 = {
+            R.drawable.lvl6_hot_0,
+            R.drawable.lvl6_cold_0,
+            R.drawable.lvl6_hot_1,
+            R.drawable.lvl6_cold_1,
+            R.drawable.lvl6_hot_2,
+            R.drawable.lvl6_cold_2,
+            R.drawable.lvl6_hot_3,
+            R.drawable.lvl6_cold_3,
+            R.drawable.lvl6_hot_4,
+            R.drawable.lvl6_cold_4,
+            R.drawable.lvl6_hot_5,
+            R.drawable.lvl6_cold_5,
+
+    };
+
+    // Массив хранящий в себе название углов
+    final int[] texts6 = {
+            R.string.lvl6text0,
+            R.string.lvl6text1,
+            R.string.lvl6text2,
+            R.string.lvl6text3,
+            R.string.lvl6text4,
+            R.string.lvl6text5,
+            R.string.lvl6text6,
+            R.string.lvl6text7,
+            R.string.lvl6text8,
+            R.string.lvl6text9,
+            R.string.lvl6text10,
+            R.string.lvl6text11,
+
+    };
+
+    final int[] strong = {
+            1,0,1,0,1,0,1,0,1,0,1,0,
+
+    };
+    /* Массив для 6-второго уровня (Конец) */
+
+    /* Массивы для 7-второго уровня (Начало) */
+    // final - ключевое слово, разрешает использовать перменную, но запрещает изменять её
+    // Массив хранящий в себе картинку углов
+    final int[] images7 = {
+            R.drawable.lvl2_0,
+            R.drawable.lvl2_1,
+            R.drawable.lvl2_2,
+            R.drawable.lvl2_3,
+            R.drawable.lvl2_4,
+            R.drawable.lvl2_5,
+            R.drawable.lvl2_6,
+            R.drawable.lvl2_7,
+            R.drawable.lvl2_8,
+            R.drawable.lvl2_9,
+    };
+
+    // Массив хранящий в себе название углов
+    final int[] texts7 = {
+            R.string.lvl2text0,
+            R.string.lvl2text1,
+            R.string.lvl2text2,
+            R.string.lvl2text3,
+            R.string.lvl2text4,
+            R.string.lvl2text5,
+            R.string.lvl2text6,
+            R.string.lvl2text7,
+            R.string.lvl2text8,
+            R.string.lvl2text9,
+    };
+    /* Массив для 7-второго уровня (Конец) */
+
 }

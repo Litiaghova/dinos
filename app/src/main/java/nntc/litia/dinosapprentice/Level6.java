@@ -19,7 +19,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 
-public class Level2 extends AppCompatActivity {
+public class Level6 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
@@ -44,7 +44,7 @@ public class Level2 extends AppCompatActivity {
         // Создание переменной для работы с текстом
         TextView text_levels = findViewById(R.id.text_levels);
         // Установка текста из файла "string"
-        text_levels.setText(R.string.level1);
+        text_levels.setText(R.string.level4);
         /* Установка текста из файла (Конец) */
 
         // Код обращения к картинке по id (Левая)
@@ -82,7 +82,7 @@ public class Level2 extends AppCompatActivity {
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
-        textdescription.setText(R.string.dialogtext2_1);
+        textdescription.setText(R.string.dialogtext6_1);
         // Установка задания в диалоговое окно (Конец)
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
@@ -94,7 +94,7 @@ public class Level2 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level2.this, Level_Menu.class);
+                    Intent intent = new Intent(Level6.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -133,7 +133,7 @@ public class Level2 extends AppCompatActivity {
 
         /* Текст в конце на диалоговм окне (Начало) */
         TextView textDescriptionEnd = (TextView)dialogEnd.findViewById(R.id.text2);
-        textDescriptionEnd.setText(R.string.dialogtext2_2);
+        textDescriptionEnd.setText(R.string.dialogtext6_2);
         /* Текст в конце на диалоговм окне (Конец) */
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
@@ -145,7 +145,7 @@ public class Level2 extends AppCompatActivity {
                 try {
                     // Вернуться назад к выбору уровня (Начало)
                     // Intent - намерение
-                    Intent intent = new Intent(Level2.this, Level_Menu.class);
+                    Intent intent = new Intent(Level6.this, Level_Menu.class);
                     // Запуск намериния
                     startActivity(intent);
                     finish();
@@ -166,7 +166,7 @@ public class Level2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level2.this, Level3.class);
+                    Intent intent = new Intent(Level6.this, Level7.class);
                     startActivity(intent);
                     finish();
                 }
@@ -190,7 +190,7 @@ public class Level2 extends AppCompatActivity {
                 // Начало конструкции
                 try {
                     // Вернуться к выбору уровня (Начало)
-                    Intent intent = new Intent(Level2.this, Level_Menu.class); // СОздание намерения перехода
+                    Intent intent = new Intent(Level6.this, Level_Menu.class); // СОздание намерения перехода
                     startActivity(intent); // Запуск намерения
                     finish(); // Закрыть этот класс
                     // Вернуться к выбору уровня (Конец)
@@ -214,32 +214,32 @@ public class Level2 extends AppCompatActivity {
         /* Массив для прогресса игры-уровня (Конец) */
 
         /* Подключение анимации (Начало) */
-        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level6.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
         /* Подготовка работы 1-го уровня, левой стороны (Начало) */
-        // Генерация случайного числа от 0-9
-        numLeft = random.nextInt(10);
+        // Генерация случайного числа
+        numLeft = random.nextInt(12);
         // Вызов картинки из массива
-        img_left.setImageResource(array.images2[numLeft]);
+        img_left.setImageResource(array.images6[numLeft]);
         // Вызов текста из массива
-        text_left.setText(array.texts2[numLeft]);
+        text_left.setText(array.texts6[numLeft]);
         /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
         /* Подготовка работы 1-го уровня, правой стороны (Начало) */
-        // Генерация случайного числа от 0-9
-        numRight = random.nextInt(10);
+        // Генерация случайного числа
+        numRight = random.nextInt(12);
 
         // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
         // Пока левое число равно правому, генерировать новое правое число
-        while (numLeft == numRight){
-            numRight = random.nextInt(10);
+        while (array.strong[numLeft]==array.strong[numRight]){
+            numRight = random.nextInt(12);
         }
         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
         // Вызов картинки из массива
-        img_right.setImageResource(array.images2[numRight]);
+        img_right.setImageResource(array.images6[numRight]);
         // Вызов текста из массива
-        text_right.setText(array.texts2[numRight]);
+        text_right.setText(array.texts6[numRight]);
         /* Подготовка работы 1-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
@@ -256,7 +256,7 @@ public class Level2 extends AppCompatActivity {
                     img_right.setEnabled(false);
 
                     // Условие показателя верной-неверной картинки
-                    if (numLeft>numRight){
+                    if (array.strong[numLeft]>array.strong[numRight]){
                         // Если левое число больше правого, показать картинку "верно"
                         img_left.setImageResource(R.drawable.img_true);
                     } else {
@@ -267,7 +267,7 @@ public class Level2 extends AppCompatActivity {
 
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     // Не касание картинки - отпустить палец (Начало)
-                    if (numLeft>numRight){
+                    if (array.strong[numLeft]>array.strong[numRight]){
                         // Если левое число больше правого
                         if(count<8){
                             count=count+1;
@@ -319,35 +319,28 @@ public class Level2 extends AppCompatActivity {
                         // Выход из уровня
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
-
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numLeft = random.nextInt(10);
+                        // Генерация случайного числа
+                        numLeft = random.nextInt(12);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images2[numLeft]);
-                        // Запуск анимации
-                        img_left.startAnimation(a);
+                        img_left.setImageResource(array.images6[numLeft]);
                         // Вызов текста из массива
-                        text_left.setText(array.texts2[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        text_left.setText(array.texts6[numLeft]);
+                        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numRight = random.nextInt(10);
+                        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+                        // Генерация случайного числа
+                        numRight = random.nextInt(12);
 
                         // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
                         // Пока левое число равно правому, генерировать новое правое число
-                        while (numLeft == numRight){
-                            numRight = random.nextInt(10);
+                        while (array.strong[numLeft]==array.strong[numRight]){
+                            numRight = random.nextInt(12);
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images2[numRight]);
-                        // Запуск анимации
-                        img_right.startAnimation(a);
+                        img_right.setImageResource(array.images6[numRight]);
                         // Вызов текста из массива
-                        text_right.setText(array.texts2[numRight]);
-                        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+                        text_right.setText(array.texts6[numRight]);
 
                         // Включение правой картинки
                         img_right.setEnabled(true);
@@ -376,7 +369,7 @@ public class Level2 extends AppCompatActivity {
                     img_left.setEnabled(false);
 
                     // Условие показателя верной-неверной картинки
-                    if (numLeft<numRight){
+                    if (array.strong[numLeft]<array.strong[numRight]){
                         // Если левое число больше правого, показать картинку "верно"
                         img_right.setImageResource(R.drawable.img_true);
                     } else {
@@ -387,7 +380,7 @@ public class Level2 extends AppCompatActivity {
 
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     // Не касание картинки - отпустить палец (Начало)
-                    if (numLeft<numRight){
+                    if (array.strong[numLeft]<array.strong[numRight]){
                         // Если правое число больше левого
                         if(count<8){
                             count=count+1;
@@ -439,35 +432,28 @@ public class Level2 extends AppCompatActivity {
                         // Выход из уровня
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
-
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numLeft = random.nextInt(10);
+                        // Генерация случайного числа
+                        numLeft = random.nextInt(12);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images2[numLeft]);
-                        // Запуск анимации
-                        img_left.startAnimation(a);
+                        img_left.setImageResource(array.images6[numLeft]);
                         // Вызов текста из массива
-                        text_left.setText(array.texts2[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        text_left.setText(array.texts6[numLeft]);
+                        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numRight = random.nextInt(10);
+                        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+                        // Генерация случайного числа
+                        numRight = random.nextInt(12);
 
                         // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
                         // Пока левое число равно правому, генерировать новое правое число
-                        while (numLeft == numRight){
-                            numRight = random.nextInt(10);
+                        while (array.strong[numLeft]==array.strong[numRight]){
+                            numRight = random.nextInt(12);
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images2[numRight]);
-                        // Запуск анимации
-                        img_right.startAnimation(a);
+                        img_right.setImageResource(array.images6[numRight]);
                         // Вызов текста из массива
-                        text_right.setText(array.texts2[numRight]);
-                        /* Подготовка работы 2-го уровня, правой стороны (Конец) */
+                        text_right.setText(array.texts6[numRight]);
 
                         // Включение левой картинки
                         img_left.setEnabled(true);
@@ -488,7 +474,7 @@ public class Level2 extends AppCompatActivity {
     public void onBackPressed(){
         // Начало конструкции
         try {
-            Intent intent = new Intent(Level2.this, Level_Menu.class);
+            Intent intent = new Intent(Level6.this, Level_Menu.class);
             startActivity(intent);
             finish();
         }catch (Exception e){
