@@ -11,16 +11,16 @@
     <string name="lvl1text8">Восемь</string>
     <string name="lvl1text9">Девять</string>
 
-    <string name="lvl2text0">Ноль</string>
-    <string name="lvl2text1">Один</string>
-    <string name="lvl2text2">Два</string>
-    <string name="lvl2text3">Три</string>
-    <string name="lvl2text4">Четыре</string>
-    <string name="lvl2text5">Пять</string>
-    <string name="lvl2text6">Шесть</string>
-    <string name="lvl2text7">Семь</string>
-    <string name="lvl2text8">Восемь</string>
-    <string name="lvl2text9">Девять</string>
+    <string name="lvl2text0">Круг</string>
+    <string name="lvl2text1">Угол</string>
+    <string name="lvl2text2">2-х угольник</string>
+    <string name="lvl2text3">Треугольник</string>
+    <string name="lvl2text4">Ромб</string>
+    <string name="lvl2text5">5-ти угольник</string>
+    <string name="lvl2text6">6-ти угольник</string>
+    <string name="lvl2text7">7-ти угольник</string>
+    <string name="lvl2text8">8-ти угольник</string>
+    <string name="lvl2text9">9-ти угольник</string>
 
     <string name="lvl3text0">Мышь</string>
     <string name="lvl3text1">Ёжик</string>
@@ -63,6 +63,29 @@
     <string name="lvl6text9">Мятный</string>
     <string name="lvl6text10">Телесный</string>
     <string name="lvl6text11">Изумрудный</string>
+
+    <string name="lvl7text0">Шиповник</string>
+    <string name="lvl7text1">Бирючина</string>
+    <string name="lvl7text2">Голубика</string>
+    <string name="lvl7text3">Беладонна</string>
+    <string name="lvl7text4">Клюква</string>
+    <string name="lvl7text5">Вороний глаз</string>
+    <string name="lvl7text6">Белый гриб</string>
+    <string name="lvl7text7">Мухомор</string>
+    <string name="lvl7text8">Вешенка</string>
+    <string name="lvl7text9">Перечник</string>
+    <string name="lvl7text10">Лисичка</string>
+    <string name="lvl7text11">Зеленушка</string>
+
+    <string name="lvl8text0">Капля</string>
+    <string name="lvl8text1">Стакан</string>
+    <string name="lvl8text2">Бутылка</string>
+    <string name="lvl8text3">Банка</string>
+    <string name="lvl8text4">Кувшин</string>
+    <string name="lvl8text5">Канистра</string>
+    <string name="lvl8text6">Ведро</string>
+    <string name="lvl8text7">Бочка</string>
+
 
 
 </resources>

@@ -1,6 +1,7 @@
 package nntc.litia.dinosapprentice;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,9 @@ public class Level_Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_menu);
+
+        SharedPreferences save = getSharedPreferences("Save",MODE_PRIVATE);
+        final int level = save.getInt("Level", 1);
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
@@ -45,9 +49,10 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level_Menu.this, Level1.class);
+                    if(level>=1){
+                    Intent intent = new Intent(Level_Menu.this, Plot_level1_1.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
@@ -60,9 +65,10 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
+                    if(level>=2){
                     Intent intent = new Intent(Level_Menu.this, Level2.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
@@ -74,10 +80,10 @@ public class Level_Menu extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try{if(level>=3){
                     Intent intent = new Intent(Level_Menu.this, Level3.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
@@ -89,10 +95,10 @@ public class Level_Menu extends AppCompatActivity {
         textView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try{if(level>=4){
                     Intent intent = new Intent(Level_Menu.this, Level4.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
@@ -104,10 +110,10 @@ public class Level_Menu extends AppCompatActivity {
         textView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try{if(level>=5){
                     Intent intent = new Intent(Level_Menu.this, Level5.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
@@ -119,10 +125,10 @@ public class Level_Menu extends AppCompatActivity {
         textView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try{if(level>=6){
                     Intent intent = new Intent(Level_Menu.this, Level6.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
@@ -134,10 +140,10 @@ public class Level_Menu extends AppCompatActivity {
         textView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try{if(level>=7){
                     Intent intent = new Intent(Level_Menu.this, Level7.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
@@ -149,15 +155,33 @@ public class Level_Menu extends AppCompatActivity {
         textView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
+                try{if(level>=8){
                     Intent intent = new Intent(Level_Menu.this, Level8.class);
                     startActivity(intent);
-                    finish();
+                    finish();}else{}
                 }catch (Exception e){
                 }
             }
         });
         /* Кнопка для перехода на 8-четвертый уровень (Конец) */
+
+        final int [] x={
+               R.id.textView1,
+                R.id.textView2,
+                R.id.textView3,
+                R.id.textView4,
+                R.id.textView5,
+                R.id.textView6,
+                R.id.textView7,
+                R.id.textView8,
+        };
+
+        /* Цикл, который расставляет числа по порядку - начало */
+        for (int i=1; i<level; i++){
+            TextView tv = findViewById(x[i]);
+            tv.setText(""+(i+1));
+        }
+        /* Цикл, который расставляет числа по порядку - конец */
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */

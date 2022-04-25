@@ -2,6 +2,7 @@ package nntc.litia.dinosapprentice;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -44,7 +45,7 @@ public class Level7 extends AppCompatActivity {
         // Создание переменной для работы с текстом
         TextView text_levels = findViewById(R.id.text_levels);
         // Установка текста из файла "string"
-        text_levels.setText(R.string.level1);
+        text_levels.setText(R.string.level7);
         /* Установка текста из файла (Конец) */
 
         // Код обращения к картинке по id (Левая)
@@ -82,7 +83,7 @@ public class Level7 extends AppCompatActivity {
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
-        textdescription.setText(R.string.dialogtext2_1);
+        textdescription.setText(R.string.dialogtext7_1);
         // Установка задания в диалоговое окно (Конец)
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
@@ -133,7 +134,7 @@ public class Level7 extends AppCompatActivity {
 
         /* Текст в конце на диалоговм окне (Начало) */
         TextView textDescriptionEnd = (TextView)dialogEnd.findViewById(R.id.text2);
-        textDescriptionEnd.setText(R.string.dialogtext2_2);
+        textDescriptionEnd.setText(R.string.dialogtext7_2);
         /* Текст в конце на диалоговм окне (Конец) */
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
@@ -166,7 +167,7 @@ public class Level7 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level7.this, Level3.class);
+                    Intent intent = new Intent(Level7.this, Level8.class);
                     startActivity(intent);
                     finish();
                 }
@@ -218,28 +219,28 @@ public class Level7 extends AppCompatActivity {
         /* Подключение анимации (Конец) */
 
         /* Подготовка работы 1-го уровня, левой стороны (Начало) */
-        // Генерация случайного числа от 0-9
-        numLeft = random.nextInt(10);
+        // Генерация случайного числа
+        numLeft = random.nextInt(12);
         // Вызов картинки из массива
-        img_left.setImageResource(array.images2[numLeft]);
+        img_left.setImageResource(array.images7[numLeft]);
         // Вызов текста из массива
-        text_left.setText(array.texts2[numLeft]);
+        text_left.setText(array.texts7[numLeft]);
         /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
         /* Подготовка работы 1-го уровня, правой стороны (Начало) */
-        // Генерация случайного числа от 0-9
-        numRight = random.nextInt(10);
+        // Генерация случайного числа
+        numRight = random.nextInt(12);
 
         // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
         // Пока левое число равно правому, генерировать новое правое число
-        while (numLeft == numRight){
-            numRight = random.nextInt(10);
+        while (array.strong7[numLeft]==array.strong7[numRight]){
+            numRight = random.nextInt(12);
         }
         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
         // Вызов картинки из массива
-        img_right.setImageResource(array.images2[numRight]);
+        img_right.setImageResource(array.images7[numRight]);
         // Вызов текста из массива
-        text_right.setText(array.texts2[numRight]);
+        text_right.setText(array.texts7[numRight]);
         /* Подготовка работы 1-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
@@ -256,7 +257,7 @@ public class Level7 extends AppCompatActivity {
                     img_right.setEnabled(false);
 
                     // Условие показателя верной-неверной картинки
-                    if (numLeft>numRight){
+                    if (array.strong7[numLeft]>array.strong7[numRight]){
                         // Если левое число больше правого, показать картинку "верно"
                         img_left.setImageResource(R.drawable.img_true);
                     } else {
@@ -267,7 +268,7 @@ public class Level7 extends AppCompatActivity {
 
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     // Не касание картинки - отпустить палец (Начало)
-                    if (numLeft>numRight){
+                    if (array.strong7[numLeft]>array.strong7[numRight]){
                         // Если левое число больше правого
                         if(count<8){
                             count=count+1;
@@ -317,37 +318,41 @@ public class Level7 extends AppCompatActivity {
                     // Если счётчик достиг максимума
                     if (count==8){
                         // Выход из уровня
+
+                        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                        final int level = save.getInt("Level", 1);
+                        if (level>7){
+
+                        }else {
+                            SharedPreferences.Editor editor = save.edit();
+                            editor.putInt("Level",8);
+                            editor.commit();
+                        }
+
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
-
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numLeft = random.nextInt(10);
+                        // Генерация случайного числа
+                        numLeft = random.nextInt(12);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images2[numLeft]);
-                        // Запуск анимации
-                        img_left.startAnimation(a);
+                        img_left.setImageResource(array.images7[numLeft]);
                         // Вызов текста из массива
-                        text_left.setText(array.texts2[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        text_left.setText(array.texts7[numLeft]);
+                        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numRight = random.nextInt(10);
+                        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+                        // Генерация случайного числа
+                        numRight = random.nextInt(12);
 
                         // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
                         // Пока левое число равно правому, генерировать новое правое число
-                        while (numLeft == numRight){
-                            numRight = random.nextInt(10);
+                        while (array.strong7[numLeft]==array.strong7[numRight]){
+                            numRight = random.nextInt(12);
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images2[numRight]);
-                        // Запуск анимации
-                        img_right.startAnimation(a);
+                        img_right.setImageResource(array.images7[numRight]);
                         // Вызов текста из массива
-                        text_right.setText(array.texts2[numRight]);
-                        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+                        text_right.setText(array.texts7[numRight]);
 
                         // Включение правой картинки
                         img_right.setEnabled(true);
@@ -376,7 +381,7 @@ public class Level7 extends AppCompatActivity {
                     img_left.setEnabled(false);
 
                     // Условие показателя верной-неверной картинки
-                    if (numLeft<numRight){
+                    if (array.strong7[numLeft]<array.strong7[numRight]){
                         // Если левое число больше правого, показать картинку "верно"
                         img_right.setImageResource(R.drawable.img_true);
                     } else {
@@ -387,7 +392,7 @@ public class Level7 extends AppCompatActivity {
 
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     // Не касание картинки - отпустить палец (Начало)
-                    if (numLeft<numRight){
+                    if (array.strong7[numLeft]<array.strong7[numRight]){
                         // Если правое число больше левого
                         if(count<8){
                             count=count+1;
@@ -437,37 +442,41 @@ public class Level7 extends AppCompatActivity {
                     // Если счётчик достиг максимума
                     if (count==8){
                         // Выход из уровня
+
+                        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                        final int level = save.getInt("Level", 1);
+                        if (level>7){
+
+                        }else {
+                            SharedPreferences.Editor editor = save.edit();
+                            editor.putInt("Level",8);
+                            editor.commit();
+                        }
+
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
-
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numLeft = random.nextInt(10);
+                        // Генерация случайного числа
+                        numLeft = random.nextInt(12);
                         // Вызов картинки из массива
-                        img_left.setImageResource(array.images2[numLeft]);
-                        // Запуск анимации
-                        img_left.startAnimation(a);
+                        img_left.setImageResource(array.images7[numLeft]);
                         // Вызов текста из массива
-                        text_left.setText(array.texts2[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        text_left.setText(array.texts7[numLeft]);
+                        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
-                        // Генерация случайного числа от 0-9
-                        numRight = random.nextInt(10);
+                        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+                        // Генерация случайного числа
+                        numRight = random.nextInt(12);
 
                         // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
                         // Пока левое число равно правому, генерировать новое правое число
-                        while (numLeft == numRight){
-                            numRight = random.nextInt(10);
+                        while (array.strong7[numLeft]==array.strong7[numRight]){
+                            numRight = random.nextInt(12);
                         }
                         // Цикл, с предусловием, проверяющий равенсто чисел (Конец)
                         // Вызов картинки из массива
-                        img_right.setImageResource(array.images2[numRight]);
-                        // Запуск анимации
-                        img_right.startAnimation(a);
+                        img_right.setImageResource(array.images7[numRight]);
                         // Вызов текста из массива
-                        text_right.setText(array.texts2[numRight]);
-                        /* Подготовка работы 2-го уровня, правой стороны (Конец) */
+                        text_right.setText(array.texts7[numRight]);
 
                         // Включение левой картинки
                         img_left.setEnabled(true);

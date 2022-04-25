@@ -199,31 +199,72 @@ public class Array {
     // final - ключевое слово, разрешает использовать перменную, но запрещает изменять её
     // Массив хранящий в себе картинку углов
     final int[] images7 = {
-            R.drawable.lvl2_0,
-            R.drawable.lvl2_1,
-            R.drawable.lvl2_2,
-            R.drawable.lvl2_3,
-            R.drawable.lvl2_4,
-            R.drawable.lvl2_5,
-            R.drawable.lvl2_6,
-            R.drawable.lvl2_7,
-            R.drawable.lvl2_8,
-            R.drawable.lvl2_9,
+            R.drawable.lvl7_good_1,
+            R.drawable.lvl7_bad_1,
+            R.drawable.lvl7_good_2,
+            R.drawable.lvl7_bad_2,
+            R.drawable.lvl7_good_3,
+            R.drawable.lvl7_bad_3,
+            R.drawable.lvl7_good_4,
+            R.drawable.lvl7_bad_4,
+            R.drawable.lvl7_good_5,
+            R.drawable.lvl7_bad_5,
+            R.drawable.lvl7_good_6,
+            R.drawable.lvl7_bad_6,
+
     };
 
     // Массив хранящий в себе название углов
     final int[] texts7 = {
-            R.string.lvl2text0,
-            R.string.lvl2text1,
-            R.string.lvl2text2,
-            R.string.lvl2text3,
-            R.string.lvl2text4,
-            R.string.lvl2text5,
-            R.string.lvl2text6,
-            R.string.lvl2text7,
-            R.string.lvl2text8,
-            R.string.lvl2text9,
+            R.string.lvl7text0,
+            R.string.lvl7text1,
+            R.string.lvl7text2,
+            R.string.lvl7text3,
+            R.string.lvl7text4,
+            R.string.lvl7text5,
+            R.string.lvl7text6,
+            R.string.lvl7text7,
+            R.string.lvl7text8,
+            R.string.lvl7text9,
+            R.string.lvl7text10,
+            R.string.lvl7text11,
+
+    };
+
+    final int[] strong7 = {
+            1,0,1,0,1,0,1,0,1,0,1,0,
+
     };
     /* Массив для 7-второго уровня (Конец) */
+
+    /* Массивы для 8-второго уровня (Начало) */
+    // final - ключевое слово, разрешает использовать перменную, но запрещает изменять её
+    // Массив хранящий в себе картинку углов
+    final int[] images8 = {
+            R.drawable.lvl8_0,
+            R.drawable.lvl8_1,
+            R.drawable.lvl8_2,
+            R.drawable.lvl8_3,
+            R.drawable.lvl8_4_kuvshin,
+            R.drawable.lvl8_4,
+            R.drawable.lvl8_4_vedro,
+            R.drawable.lvl8_5,
+
+
+    };
+
+    // Массив хранящий в себе название углов
+    final int[] texts8 = {
+            R.string.lvl8text0,
+            R.string.lvl8text1,
+            R.string.lvl8text2,
+            R.string.lvl8text3,
+            R.string.lvl8text4,
+            R.string.lvl8text5,
+            R.string.lvl8text6,
+            R.string.lvl8text7,
+
+    };
+    /* Массив для 8-второго уровня (Конец) */
 
 }
