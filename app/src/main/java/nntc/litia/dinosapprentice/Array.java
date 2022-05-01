@@ -267,4 +267,16 @@ public class Array {
     };
     /* Массив для 8-второго уровня (Конец) */
 
+    /* Массивы для сценария 1-го уровня (Начало) */
+
+    static final int[] lvl1_plot1= {
+            R.string.plot1_1,
+            R.string.plot1_2,
+            R.string.plot1_3,
+            R.string.plot1_4,
+
+
+    };
+    /* Массив для сценария 1-го уровня (Конец) */
+
 }

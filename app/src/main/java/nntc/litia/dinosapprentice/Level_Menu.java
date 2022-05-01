@@ -2,20 +2,29 @@ package nntc.litia.dinosapprentice;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class Level_Menu extends AppCompatActivity {
 
+    private MediaPlayer sound_lvl_menu;
+    final String TAG = "lifecycle";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        sound_lvl_menu = MediaPlayer.create(this, R.raw.song1);
+        sound_lvl_menu.setLooping(true);
+        sound_lvl_menu.start();
+
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "Активити меню уровней создается");
         setContentView(R.layout.level_menu);
 
         SharedPreferences save = getSharedPreferences("Save",MODE_PRIVATE);
@@ -23,7 +32,8 @@ public class Level_Menu extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
         /* Обработка нажатия кнопки "назад" в меню (Начало) */
@@ -50,9 +60,11 @@ public class Level_Menu extends AppCompatActivity {
             public void onClick(View view) {
                 try{
                     if(level>=1){
-                    Intent intent = new Intent(Level_Menu.this, Plot_level1_1.class);
+                    Intent intent = new Intent(Level_Menu.this, Level1plot1.class);
                     startActivity(intent);
                     finish();}else{}
+
+
                 }catch (Exception e){
                 }
             }
@@ -66,7 +78,7 @@ public class Level_Menu extends AppCompatActivity {
             public void onClick(View view) {
                 try{
                     if(level>=2){
-                    Intent intent = new Intent(Level_Menu.this, Level2.class);
+                    Intent intent = new Intent(Level_Menu.this, Level2plot1.class);
                     startActivity(intent);
                     finish();}else{}
                 }catch (Exception e){
@@ -165,8 +177,9 @@ public class Level_Menu extends AppCompatActivity {
         });
         /* Кнопка для перехода на 8-четвертый уровень (Конец) */
 
+        /* Отслеживание прогресса уровней в главном меню (Начало) */
         final int [] x={
-               R.id.textView1,
+                R.id.textView1,
                 R.id.textView2,
                 R.id.textView3,
                 R.id.textView4,
@@ -182,6 +195,46 @@ public class Level_Menu extends AppCompatActivity {
             tv.setText(""+(i+1));
         }
         /* Цикл, который расставляет числа по порядку - конец */
+    }
+    /* Отслеживание прогресса уровней в главном меню (Конец) */
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Активити меню уровней уровня становится видимым");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d(TAG, "Активити меню уровней получает фокус и переходит в состояние onResume");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d(TAG, "Активити меню уровней приостановленно и находится в состоянии onPause");
+        if (sound_lvl_menu != null) {
+            sound_lvl_menu.pause();
+        }
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.d(TAG, "Активити меню уровней остановленно и находится в состоянии onStop");
+        if (sound_lvl_menu != null) {
+            sound_lvl_menu.stop();
+        }
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(TAG, "Активити меню уровней уничтожено и находится в состоянии onDestroy");
+        if (sound_lvl_menu != null) {
+            sound_lvl_menu.stop();
+        }
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */

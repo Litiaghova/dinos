@@ -65,7 +65,9 @@ public class Level7 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
         /* Вызов диалогового окна 2-го уровня (Начало) */
@@ -76,10 +78,7 @@ public class Level7 extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
 
-        // Установка картинки в диалоговое окно (Начало)
-        ImageView previewimg = (ImageView)dialog.findViewById(R.id.previewimg);
-        previewimg.setImageResource(R.drawable.dialog2);
-        // Установка картинки в диалоговое окно (Конец)
+
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);

@@ -39,24 +39,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/button_stroke_black95_press_white_together"
+                    android:background="@drawable/button_level_menu_numbers_together"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:text="@string/back"
                     android:textAllCaps="false"
-                    android:textColor="@color/black95"
-                    android:textSize="24sp" />
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/qaswq"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/text_levels"
                     android:layout_width="wrap_content"
+                    android:fontFamily="@font/qaswq"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
                     android:padding="10dp"
                     android:text="@string/level"
-                    android:textColor="@color/black95"
-                    android:textSize="24sp" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -161,9 +163,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/text_left"
-                    android:textColor="@color/black60"
+                    android:textColor="@color/white"
                     android:text="text_left"
-                    android:textSize="24sp"
+                    android:fontFamily="@font/qaswq"
+                    android:textSize="15sp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:gravity="center">
@@ -172,9 +175,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/text_right"
-                    android:textColor="@color/black60"
+                    android:textColor="@color/white"
                     android:text="text_right"
-                    android:textSize="24sp"
+                    android:fontFamily="@font/qaswq"
+                    android:textSize="15sp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:gravity="center">

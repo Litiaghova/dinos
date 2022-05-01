@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -25,6 +27,10 @@ public class Level3 extends AppCompatActivity {
     Dialog dialog;
     Dialog dialogEnd;
 
+    final String TAG = "lifecycle";
+
+    private MediaPlayer sound_lvl;
+
     // Переменная - это место в памяти, в котором будет хранится информация
     // public - указывает, что доступ к переменной будет открытым
     public int numLeft; // Переменная для работы с левой картинкой + текст
@@ -40,6 +46,12 @@ public class Level3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_level);
+
+        Log.d(TAG, "Активити 3-го уровня создано");
+
+        sound_lvl = MediaPlayer.create(this, R.raw.song1);
+        sound_lvl.setLooping(true);
+        sound_lvl.start();
 
         /* Установка текста из файла (Начало) */
         // Создание переменной для работы с текстом
@@ -65,7 +77,9 @@ public class Level3 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
         /* Вызов диалогового окна 2-го уровня (Начало) */
@@ -76,10 +90,7 @@ public class Level3 extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
 
-        // Установка картинки в диалоговое окно (Начало)
-        ImageView previewimg = (ImageView)dialog.findViewById(R.id.previewimg);
-        previewimg.setImageResource(R.drawable.dialog2);
-        // Установка картинки в диалоговое окно (Конец)
+
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
@@ -504,6 +515,46 @@ public class Level3 extends AppCompatActivity {
             }
         });
         /* Обработка нажатия на правую картинку (Конец) */
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Активити 3-го уровня становится видимым");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d(TAG, "Активити 3-го уровня получает фокус и переходит в состояние onResume");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d(TAG, "Активити 3-го уровня приостановленно и находится в состоянии onPause");
+        if (sound_lvl != null) {
+            sound_lvl.pause();
+        }
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.d(TAG, "Активити 3-го уровня остановленно и находится в состоянии onStop");
+        if (sound_lvl != null) {
+            sound_lvl.stop();
+        }
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(TAG, "Активити 3-го уровня уничтожено и находится в состоянии onDestroy");
+        if (sound_lvl != null) {
+            sound_lvl.stop();
+        }
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */

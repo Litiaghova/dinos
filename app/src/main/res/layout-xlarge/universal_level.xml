@@ -39,12 +39,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/button_stroke_black95_press_white_together"
+                    android:background="@drawable/button_level_menu_numbers_together"
                     android:padding="10dp"
                     android:text="@string/back"
                     android:textAllCaps="false"
-                    android:textColor="@color/black95"
-                    android:textSize="50sp" />
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/qaswq"
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/text_levels"
@@ -54,8 +55,9 @@
                     android:gravity="right"
                     android:padding="10dp"
                     android:text="@string/level"
-                    android:textColor="@color/black95"
-                    android:textSize="50sp" />
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/qaswq"
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -165,8 +167,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="text_left"
-                    android:textColor="@color/black60"
-                    android:textSize="50sp"></TextView>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/qaswq"
+                    android:textSize="25sp"></TextView>
 
                 <TextView
                     android:id="@+id/text_right"
@@ -176,8 +179,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="text_right"
-                    android:textColor="@color/black60"
-                    android:textSize="50sp"></TextView>
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/qaswq"
+                    android:textSize="25sp"></TextView>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

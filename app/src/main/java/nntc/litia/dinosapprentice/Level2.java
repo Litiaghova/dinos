@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -25,6 +27,10 @@ public class Level2 extends AppCompatActivity {
     Dialog dialog;
     Dialog dialogEnd;
 
+    final String TAG = "lifecycle";
+
+    private MediaPlayer sound_lvl;
+
     // Переменная - это место в памяти, в котором будет хранится информация
     // public - указывает, что доступ к переменной будет открытым
     public int numLeft; // Переменная для работы с левой картинкой + текст
@@ -40,6 +46,12 @@ public class Level2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_level);
+
+        Log.d(TAG, "Активити 2-го уровня создано");
+
+        sound_lvl = MediaPlayer.create(this, R.raw.song1);
+        sound_lvl.setLooping(true);
+        sound_lvl.start();
 
         /* Установка текста из файла (Начало) */
         // Создание переменной для работы с текстом
@@ -65,21 +77,22 @@ public class Level2 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
         /* Вызов диалогового окна 2-го уровня (Начало) */
-
         dialog = new Dialog(this); // Создание нового диалогового окна
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialog.setContentView(R.layout.previewdialog); // Путь к макету даилогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
 
-        // Установка картинки в диалоговое окно (Начало)
-        ImageView previewimg = (ImageView)dialog.findViewById(R.id.previewimg);
-        previewimg.setImageResource(R.drawable.dialog2);
-        // Установка картинки в диалоговое окно (Конец)
+        /* Установка фона во 2 уровень - начало */
+        ImageView background = (ImageView)  findViewById(R.id.background);
+        background.setImageResource(R.drawable.wscde);
+        /* Установка фона во 2 уровень - конец */
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
@@ -122,10 +135,8 @@ public class Level2 extends AppCompatActivity {
         /* Кнопка продолжить - диалоговое окно (Конец) */
 
         dialog.show(); // Показ диалогового окна
-
         /* Вызов диалогового окна 2-го уровня (Конец) */
 
-        // -----------------------------------------
         dialogEnd = new Dialog(this); // Создание нового диалогового окна
         dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialogEnd.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
@@ -179,9 +190,6 @@ public class Level2 extends AppCompatActivity {
             }
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
-
-
-        // -----------------------------------------
 
         /* Обработка нажатия кнопки "назад" (Начало) */
         Button button_back = (Button) findViewById(R.id.button_back);
@@ -265,7 +273,6 @@ public class Level2 extends AppCompatActivity {
                         img_left.setImageResource(R.drawable.img_folse);
                     }
                     // Касание картинки - приложить палец (Конец)
-
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     // Не касание картинки - отпустить палец (Начало)
                     if (numLeft>numRight){
@@ -273,7 +280,6 @@ public class Level2 extends AppCompatActivity {
                         if(count<8){
                             count=count+1;
                         }
-
                         // Закрашивание прогресса серым цветом (Начало)
                         for(int i=0; i<8; i++){
                             TextView tv = findViewById(progress[i]);
@@ -494,16 +500,53 @@ public class Level2 extends AppCompatActivity {
 
                         // Включение левой картинки
                         img_left.setEnabled(true);
-
                     }
                 }
-
                 /* Условие касания картинки (Конец) */
-
                 return true;
             }
         });
         /* Обработка нажатия на правую картинку (Конец) */
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Активити 2-го уровня становится видимым");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d(TAG, "Активити 2-го уровня получает фокус и переходит в состояние onResume");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d(TAG, "Активити 2-го уровня приостановленно и находится в состоянии onPause");
+        if (sound_lvl != null) {
+            sound_lvl.pause();
+        }
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.d(TAG, "Активити 2-го уровня остановленно и находится в состоянии onStop");
+        if (sound_lvl != null) {
+            sound_lvl.stop();
+        }
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(TAG, "Активити 2-го уровня уничтожено и находится в состоянии onDestroy");
+        if (sound_lvl != null) {
+            sound_lvl.stop();
+        }
     }
 
     /* Обработка нажатия системной кнопки "назад" (Начало) */
@@ -517,8 +560,6 @@ public class Level2 extends AppCompatActivity {
         }catch (Exception e){
         }
         // Конец конструкции
-
-
     }
     /* Обработка нажатия системной кнопки "назад" (Конец) */
 }

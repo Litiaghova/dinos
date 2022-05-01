@@ -4,29 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityMenu"
-    android:background="@drawable/menu">
+    tools:context=".ActivityMenu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imageView_message_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/menu_gif" />
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:id="@+id/startLayout"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
         android:padding="10dp"
-        android:orientation="horizontal">
+        >
 
-        <Button
-            android:id="@+id/buttonStart"
+
+        <LinearLayout
+            android:id="@+id/startLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_stroke_black95_press_white_together"
-            android:text="@string/start"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColor="@color/black95"
-            android:textSize="24sp"/>
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/buttonStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_level_menu_numbers_together"
+                android:fontFamily="@font/qaswq"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/start"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+
+            <Button
+                android:id="@+id/buttonLeave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button_level_menu_numbers_together"
+                android:fontFamily="@font/qaswq"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/exit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
 
+
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

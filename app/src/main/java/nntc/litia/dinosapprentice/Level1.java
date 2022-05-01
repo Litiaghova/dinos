@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -15,6 +17,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -24,6 +27,10 @@ public class Level1 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogend;
+
+    final String TAG = "lifecycle";
+
+    private MediaPlayer sound_lvl;
 
     // Переменная - это место в памяти, в котором будет хранится информация
     // public - указывает, что доступ к переменной будет открытым
@@ -38,7 +45,13 @@ public class Level1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        sound_lvl = MediaPlayer.create(this, R.raw.song1);
+        sound_lvl.setLooping(true);
+        sound_lvl.start();
+
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "Активити 1-го уровня становится создается");
         setContentView(R.layout.universal_level);
 
         /* Установка текста из файла (Начало) */
@@ -65,7 +78,8 @@ public class Level1 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
         /* Вызов диалогового окна 1-го уровня (Начало) */
@@ -75,6 +89,12 @@ public class Level1 extends AppCompatActivity {
         dialog.setContentView(R.layout.previewdialog); // Путь к макету даилогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
+
+
+        /* Установка фона в 1 уровень - начало */
+        ImageView background = (ImageView)  findViewById(R.id.background);
+        background.setImageResource(R.drawable.wscde);
+        /* Установка фона в 1 уровень - конец */
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
         TextView btnClose = (TextView)dialog.findViewById(R.id.btnClose);
@@ -110,17 +130,17 @@ public class Level1 extends AppCompatActivity {
             }
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
-
         dialog.show(); // Показ диалогового окна
 
         /* Вызов диалогового окна 1-го уровня (Конец) */
 
-        // -----------------------------------------
         dialogend = new Dialog(this); // Создание нового диалогового окна
         dialogend.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialogend.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
         dialogend.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialogend.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
+
+
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */
         TextView btnClose2 = (TextView)dialogend.findViewById(R.id.btnClose);
@@ -152,7 +172,7 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level1.this, Level2.class);
+                    Intent intent = new Intent(Level1.this, Level2plot1.class);
                     startActivity(intent);
                     finish();
                 }
@@ -164,9 +184,6 @@ public class Level1 extends AppCompatActivity {
             }
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
-
-
-        // -----------------------------------------
 
         /* Обработка нажатия кнопки "назад" (Начало) */
         Button button_back = (Button) findViewById(R.id.button_back);
@@ -491,6 +508,47 @@ public class Level1 extends AppCompatActivity {
         /* Обработка нажатия на правую картинку (Конец) */
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Активити 1-го уровня становится видимым");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d(TAG, "Активити 1-го уровня получает фокус и переходит в состояние onResume");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d(TAG, "Активити 1-го уровня приостановленно и находится в состоянии onPause");
+        if (sound_lvl != null) {
+            sound_lvl.pause();
+        }
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.d(TAG, "Активити 1-го уровня остановленно и находится в состоянии onStop");
+        if (sound_lvl != null) {
+            sound_lvl.stop();
+        }
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(TAG, "Активити 1-го уровня уничтожено и находится в состоянии onDestroy");
+        if (sound_lvl != null) {
+            sound_lvl.stop();
+        }
+    }
+
+
     /* Обработка нажатия системной кнопки "назад" (Начало) */
     @Override
     public void onBackPressed(){
@@ -502,8 +560,6 @@ public class Level1 extends AppCompatActivity {
         }catch (Exception e){
         }
         // Конец конструкции
-
-
     }
     /* Обработка нажатия системной кнопки "назад" (Конец) */
 }

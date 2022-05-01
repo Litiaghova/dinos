@@ -23,7 +23,7 @@
     <string name="lvl2text9">9-ти угольник</string>
 
     <string name="lvl3text0">Мышь</string>
-    <string name="lvl3text1">Ёжик</string>
+    <string name="lvl3text1">Ёж</string>
     <string name="lvl3text2">Белка</string>
     <string name="lvl3text3">Заяц</string>
     <string name="lvl3text4">Лиса</string>
@@ -85,6 +85,8 @@
     <string name="lvl8text5">Канистра</string>
     <string name="lvl8text6">Ведро</string>
     <string name="lvl8text7">Бочка</string>
+
+
 
 
 
