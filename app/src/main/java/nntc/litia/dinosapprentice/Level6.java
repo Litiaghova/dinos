@@ -91,15 +91,15 @@ public class Level6 extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
 
+        /* Установка фона в 6 уровень - начало */
+        ImageView background = (ImageView)  findViewById(R.id.background);
+        background.setImageResource(R.drawable.wscde);
+        /* Установка фона в 6 уровень - конец */
+
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
         textdescription.setText(R.string.dialogtext6_1);
         // Установка задания в диалоговое окно (Конец)
-
-        /* Установка фона в 6 уровень - начало */
-        ImageView background = (ImageView)  findViewById(R.id.background);
-        background.setImageResource(R.color.lvl6_background);
-        /* Установка фона в 6 уровень - конец */
 
 
         /* Кнопка закрытия диалогового окна - Х (Начало) */

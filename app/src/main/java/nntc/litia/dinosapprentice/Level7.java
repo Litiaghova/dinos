@@ -90,7 +90,10 @@ public class Level7 extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
 
-
+        /* Установка фона в 7 уровень - начало */
+        ImageView background = (ImageView)  findViewById(R.id.background);
+        background.setImageResource(R.drawable.wscde);
+        /* Установка фона в 7 уровень - конец */
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);

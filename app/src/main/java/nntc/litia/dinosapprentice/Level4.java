@@ -143,6 +143,11 @@ public class Level4 extends AppCompatActivity {
         dialogEnd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialogEnd.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
 
+        /* Установка фона в 4 уровень - начало */
+        ImageView background = (ImageView)  findViewById(R.id.background);
+        background.setImageResource(R.drawable.wscde);
+        /* Установка фона в 4 уровень - конец */
+
         /* Текст в конце на диалоговм окне (Начало) */
         TextView textDescriptionEnd = (TextView)dialogEnd.findViewById(R.id.text2);
         textDescriptionEnd.setText(R.string.dialogtext4_2);
