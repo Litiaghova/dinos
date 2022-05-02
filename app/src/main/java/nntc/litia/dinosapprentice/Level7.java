@@ -181,7 +181,7 @@ public class Level7 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    Intent intent = new Intent(Level7.this, Level8.class);
+                    Intent intent = new Intent(Level7.this, Level8plot1.class);
                     startActivity(intent);
                     finish();
                 }

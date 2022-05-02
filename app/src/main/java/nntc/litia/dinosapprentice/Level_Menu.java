@@ -93,7 +93,7 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{if(level>=3){
-                    Intent intent = new Intent(Level_Menu.this, Level3.class);
+                    Intent intent = new Intent(Level_Menu.this, Level3plot1.class);
                     startActivity(intent);
                     finish();}else{}
                 }catch (Exception e){
@@ -108,7 +108,7 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{if(level>=4){
-                    Intent intent = new Intent(Level_Menu.this, Level4.class);
+                    Intent intent = new Intent(Level_Menu.this, Level4plot1.class);
                     startActivity(intent);
                     finish();}else{}
                 }catch (Exception e){
@@ -123,7 +123,7 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{if(level>=5){
-                    Intent intent = new Intent(Level_Menu.this, Level5.class);
+                    Intent intent = new Intent(Level_Menu.this, Level5plot1.class);
                     startActivity(intent);
                     finish();}else{}
                 }catch (Exception e){
@@ -138,7 +138,7 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{if(level>=6){
-                    Intent intent = new Intent(Level_Menu.this, Level6.class);
+                    Intent intent = new Intent(Level_Menu.this, Level6plot1.class);
                     startActivity(intent);
                     finish();}else{}
                 }catch (Exception e){
@@ -153,7 +153,7 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{if(level>=7){
-                    Intent intent = new Intent(Level_Menu.this, Level7.class);
+                    Intent intent = new Intent(Level_Menu.this, Level7plot1.class);
                     startActivity(intent);
                     finish();}else{}
                 }catch (Exception e){
@@ -168,7 +168,7 @@ public class Level_Menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{if(level>=8){
-                    Intent intent = new Intent(Level_Menu.this, Level8.class);
+                    Intent intent = new Intent(Level_Menu.this, Level8plot1.class);
                     startActivity(intent);
                     finish();}else{}
                 }catch (Exception e){

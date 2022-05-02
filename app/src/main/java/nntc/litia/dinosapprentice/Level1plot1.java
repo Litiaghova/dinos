@@ -45,7 +45,7 @@ public class Level1plot1 extends AppCompatActivity {
                 R.drawable.plot7,
                 R.drawable.plot8,
                 R.drawable.plot9,
-                R.drawable.plot10,
+                R.drawable.plot11,
 
         };
 
