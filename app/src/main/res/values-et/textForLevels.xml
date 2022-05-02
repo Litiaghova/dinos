@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lvl1text0">Null</string>
+    <string name="lvl1text1">Üks</string>
+    <string name="lvl1text2">Kaks</string>
+    <string name="lvl1text3">Kolm</string>
+    <string name="lvl1text4">Neli</string>
+    <string name="lvl1text5">Viis</string>
+    <string name="lvl1text6">Kuus</string>
+    <string name="lvl1text7">Seitse</string>
+    <string name="lvl1text8">Kaheksa</string>
+    <string name="lvl1text9">Üheksa</string>
+
+    <string name="lvl2text0">0</string>
+    <string name="lvl2text1">1</string>
+    <string name="lvl2text2">2</string>
+    <string name="lvl2text3">3</string>
+    <string name="lvl2text4">4</string>
+    <string name="lvl2text5">5</string>
+    <string name="lvl2text6">6к</string>
+    <string name="lvl2text7">7</string>
+    <string name="lvl2text8">8</string>
+    <string name="lvl2text9">9</string>
+
+    <string name="lvl3text0">Hiir</string>
+    <string name="lvl3text1">Siil</string>
+    <string name="lvl3text2">Valk</string>
+    <string name="lvl3text3">Jänes</string>
+    <string name="lvl3text4">Rebane</string>
+    <string name="lvl3text5">Ilves</string>
+    <string name="lvl3text6">Hunt</string>
+    <string name="lvl3text7">Metssiga</string>
+    <string name="lvl3text8">Põder</string>
+    <string name="lvl3text9">Karu</string>
+
+    <string name="lvl4text0">Elavhõbe</string>
+    <string name="lvl4text1">Venus</string>
+    <string name="lvl4text2">Maa</string>
+    <string name="lvl4text3">Mars</string>
+    <string name="lvl4text4">Jupiter</string>
+    <string name="lvl4text5">Saturn</string>
+    <string name="lvl4text6">Uraan</string>
+    <string name="lvl4text7">Neptuun</string>
+
+    <string name="lvl5text0">Caveman</string>
+    <string name="lvl5text1">Kreeklane</string>
+    <string name="lvl5text2">Rüütel</string>
+    <string name="lvl5text3">Preester</string>
+    <string name="lvl5text4">Teadlane</string>
+    <string name="lvl5text5">Tööstur</string>
+    <string name="lvl5text6">Poliitik</string>
+    <string name="lvl5text7">Blogija</string>
+
+    <string name="lvl6text0">Sinep</string>
+    <string name="lvl6text1">Roosa</string>
+    <string name="lvl6text2">Punane</string>
+    <string name="lvl6text3">Sinine</string>
+    <string name="lvl6text4">Oranž</string>
+    <string name="lvl6text5">Lilla</string>
+    <string name="lvl6text6">Roheline</string>
+    <string name="lvl6text7">Taevane</string>
+    <string name="lvl6text8">Pruun</string>
+    <string name="lvl6text9">Piparmünt</string>
+    <string name="lvl6text10">Kehavigastuse</string>
+    <string name="lvl6text11">Smaragd</string>
+
+    <string name="lvl7text0">Kibuvits</string>
+    <string name="lvl7text1">Privet</string>
+    <string name="lvl7text2">Mustika</string>
+    <string name="lvl7text3">Beladonna</string>
+    <string name="lvl7text4">Jõhvikas</string>
+    <string name="lvl7text5">Varesilm</string>
+    <string name="lvl7text6">Valge seene</string>
+    <string name="lvl7text7">Amanita</string>
+    <string name="lvl7text8">Auster</string>
+    <string name="lvl7text9">Perchnik</string>
+        <string name="lvl7text10">Kukeseen</string>
+    <string name="lvl7text11">Zelenushka</string>
+
+    <string name="lvl8text0">Tilk</string>
+    <string name="lvl8text1">Klaas</string>
+    <string name="lvl8text2">Pudel</string>
+    <string name="lvl8text3">Purk</string>
+    <string name="lvl8text4">Kann</string>
+    <string name="lvl8text5">Kanister</string>
+    <string name="lvl8text6">Ämber</string>
+    <string name="lvl8text7">Tünn</string>
+
+
+
+
+
+</resources>

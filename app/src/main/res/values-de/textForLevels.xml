@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lvl1text0">Null</string>
+    <string name="lvl1text1">Eins</string>
+    <string name="lvl1text2">Zwei</string>
+    <string name="lvl1text3">Drei</string>
+    <string name="lvl1text4">Vier</string>
+    <string name="lvl1text5">Fünf</string>
+    <string name="lvl1text6">Sechs</string>
+    <string name="lvl1text7">Sieben</string>
+    <string name="lvl1text8">Acht</string>
+    <string name="lvl1text9">Neun</string>
+
+    <string name="lvl2text0">Kreis</string>
+    <string name="lvl2text1">Winkel</string>
+    <string name="lvl2text2">2 Ecken</string>
+    <string name="lvl2text3">Dreieck</string>
+    <string name="lvl2text4">Raute</string>
+    <string name="lvl2text5">5-Winkelstück</string>
+    <string name="lvl2text6">6-Winkelstück</string>
+    <string name="lvl2text7">7-Winkelstück</string>
+    <string name="lvl2text8">8-Winkelstück</string>
+    <string name="lvl2text9">9-Winkelstück</string>
+
+    <string name="lvl3text0">Maus</string>
+    <string name="lvl3text1">Igel</string>
+    <string name="lvl3text2">Protein</string>
+    <string name="lvl3text3">Hase</string>
+    <string name="lvl3text4">Fuchs</string>
+    <string name="lvl3text5">Luchs</string>
+    <string name="lvl3text6">Wolf</string>
+    <string name="lvl3text7">Wildschwein</string>
+    <string name="lvl3text8">Elch</string>
+    <string name="lvl3text9">Bär</string>
+
+    <string name="lvl4text0">Merkur</string>
+    <string name="lvl4text1">Venus</string>
+    <string name="lvl4text2">Erde</string>
+    <string name="lvl4text3">Mars</string>
+    <string name="lvl4text4">Jupiter</string>
+    <string name="lvl4text5">Saturn</string>
+    <string name="lvl4text6">Uranus</string>
+    <string name="lvl4text7">Neptun</string>
+
+    <string name="lvl5text0">Höhlenmensch</string>
+    <string name="lvl5text1">Grieche</string>
+    <string name="lvl5text2">Ritter</string>
+    <string name="lvl5text3">Priester</string>
+    <string name="lvl5text4">Wissenschaftler</string>
+    <string name="lvl5text5">Industrieller</string>
+    <string name="lvl5text6">Richtlinien</string>
+    <string name="lvl5text7">Blogger</string>
+
+    <string name="lvl6text0">Senf</string>
+    <string name="lvl6text1">Pink</string>
+    <string name="lvl6text2">Rot</string>
+    <string name="lvl6text3">Blau</string>
+    <string name="lvl6text4">Orange</string>
+    <string name="lvl6text5">Flieder</string>
+    <string name="lvl6text6">Grün</string>
+    <string name="lvl6text7">Himmlisch</string>
+    <string name="lvl6text8">Braun</string>
+    <string name="lvl6text9">Minze</string>
+    <string name="lvl6text10">Körperlich</string>
+    <string name="lvl6text11">Smaragd</string>
+
+    <string name="lvl7text0">Hagebutte</string>
+    <string name="lvl7text1">Tag</string>
+    <string name="lvl7text2">Blaubeeren</string>
+    <string name="lvl7text3">Beladonna</string>
+    <string name="lvl7text4">Cranberries</string>
+    <string name="lvl7text5">Krähenauge</string>
+    <string name="lvl7text6">Weißer Pilz</string>
+    <string name="lvl7text7">Amanita</string>
+    <string name="lvl7text8">Austernpilz</string>
+    <string name="lvl7text9">Pfefferspray</string>
+    <string name="lvl7text10">Pfifferling</string>
+    <string name="lvl7text11">Grünzeug</string>
+
+    <string name="lvl8text0">Drop</string>
+    <string name="lvl8text1">Glas</string>
+    <string name="lvl8text2">Flasche</string>
+    <string name="lvl8text3">Bank</string>
+    <string name="lvl8text4">Krug</string>
+    <string name="lvl8text5">Kanister</string>
+    <string name="lvl8text6">Bucket</string>
+    <string name="lvl8text7">Fass</string>
+
+</resources>

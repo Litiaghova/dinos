@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Dino Seiklused</string>
+    <string name="start">Alusta mängu</string>
+    <string name="skip">Jäta</string>
+    <string name="back">Tagasi</string>
+    <string name="exit">Lõpeta mäng</string>
+    <string name="loading">Allalaadimine</string>
+
+    <string name="on_sound">Palun lülitage heli sisse</string>
+
+    <string name="level">Tase:</string>
+    <string name="level1">Tase: 1 \n Valige suurem arv</string>
+    <string name="level2">Tase: 2 \n Valige suurem nurkade arv</string>
+    <string name="level3">Tase: 3 \n Valige suurem loom</string>
+    <string name="level4">Tase: 4 \n Valige Päikesest kaugemal asuv planeet</string>
+    <string name="level5">Tase: 5 \n Valige hiline roll</string>
+    <string name="level6">Tase: 6 \n Valige soe värv</string>
+    <string name="level7">Tase: 7 \n Valige söödav taim</string>
+    <string name="level8">Tase: 8 \n Valige suurem maht</string>
+
+    <string name="btndialogcontinue">Далее</string>
+
+    <string name="dialogtext1">Korraldame peatükid õiges järjekorras, selleks valige number, mis on suurem.</string>
+    <string name="dialogtext2">Paigutades kõik peatükid õiges järjekorras, saate teada, et Evergardeni esimesed inimesed on iidsed Kutumid, kuninga nõunikud.</string>
+    <string name="dialogtext2_1">Kutums on valmis järgima ainult tugevat juhti ja ei usu sind, nad pole nõus pinnale tulema,
+    Saate neile vastupidist tõestada, looge oma kätega parim rubiinilõige, selleks peate valima nurkade arvu,
+        mis on suurem.</string>
+    <string name="dialogtext2_2">Kutums on valmis oskusi vastu võtma, kuid nad usaldavad teid ettevaatlikult, nad tulevad pinnale,
+    niipea kui nad on valmis, suunavad nad teid edasi itta, saarlaste - Bernide poole.</string>
+    <string name="dialogtext3_1">Aidake Bernidel selle jaoks meeles pidada, millised olendid Maal elavad
+        valige loom, kelle suurus on suurem.</string>
+    <string name="dialogtext3_2">Koos Teiega laskuvad Bernid tuulevooludel evergardeni hävinud lossi poole,
+    nad paluvad teil leida Vamoli inimesed, et nad aitaksid taastumise igavust heledamaks muuta.</string>
+    <string name="dialogtext4_1">Öelge olinimestele, kui palju planeete saab nende loovust selle jaoks tunda
+    valige planeet, mis asub Päikesest kaugemal.</string>
+    <string name="dialogtext4_2">Rändurid on valmis hommikul tagasi pöörduma, et uuesti ettevõtlusega tegeleda, ja enne seda
+    nad räägivad teile legendi kadunud mereriigist, mis tekkis pärast unustamist.</string>
+    <string name="dialogtext5_1">Avage oma süda vanemale, selleks näidake talle ajastut, mis ilmus hiljem.</string>
+    <string name="dialogtext5_2">Karandid tulevad teiega tagasi ja kaitsevad Evergardenit igasuguste raskuste eest.</string>
+    <string name="dialogtext6_1">Näidake maailma Värvi hiiglastele, osutades värvile, mis on soojem.</string>
+    <string name="dialogtext6_2">Pöörates tähelepanu suurimatele elanikele, tasub pöörduda väikeste poole.
+    Tukarid, metsa inimesed ja väikesed saladused. Ilma nende abita ei saa te hakkama.</string>
+    <string name="dialogtext7_1">Näidake Tukaramile oma teadmisi metsataimede kohta, selleks valige pakutavate võimaluste hulgast taim,
+        mis on söödav.</string>
+    <string name="dialogtext7_2">See oli keeruline ülesanne, kuid saite hakkama, Tukarid on tehtud tööga rahul ja nõustuvad Teid aitama.
+    Jääb üle arutada nendega vajaliku töö mahtu.</string>
+    <string name="dialogtext8_1">Enne taastamist tasub jõud õigesti jaotada, selleks valige maht, mis
+    seal on rohkem.</string>
+    <string name="dialogtext8_2">Palju õnne, minimaalne töö on valmis! Nüüd on see teie kuningriik.
+    Olge ettevaatlik ja loodame, et näeme teid varsti.</string>
+
+
+
+</resources>

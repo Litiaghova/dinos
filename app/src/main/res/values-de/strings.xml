@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Abenteuer \n Dino</string>
+    <string name="start">Spiel starten</string>
+    <string name="skip">Überspringen</string>
+    <string name="back">Zurück</string>
+    <string name="exit">Spiel beenden</string>
+    <string name="loading">Laden</string>
+
+    <string name="on_sound">Bitte schalten Sie den Ton ein</string>
+
+    <string name="level">Ebene:</string>
+    <string name="level1">Ebene: 1 \n Größere Zahl auswählen</string>
+    <string name="level2">Ebene: 2 \n Größere Winkel wählen</string>
+    <string name="level3">Stufe: 3 \n Größeres Tier auswählen</string>
+    <string name="level4">Ebene: 4 \n Wähle einen Planeten weiter von der Sonne entfernt</string>
+    <string name="level5">Ebene: 5 \n Spätere Rolle auswählen</string>
+    <string name="level6">Ebene: 6 \n Wählen Sie eine warme Farbe</string>
+    <string name="level7">Stufe: 7 \n Essbare Pflanze auswählen</string>
+    <string name="level8">Ebene: 8 \n Größeres Volumen auswählen</string>
+
+    <string name="btndialogcontinue">Weiter</string>
+
+    <string name="dialogtext1">Ordnen Sie die Kapitel in der gewünschten Reihenfolge an, indem Sie eine Zahl auswählen, die größer ist.</string>
+    <string name="dialogtext2">Ordnet alle Kapitel in der richtigen Reihenfolge, erfahren Sie, dass das erste Volk Эвергардэна sind die alten Кутумы, Berater des Königs.</string>
+    <string name="dialogtext2_1">Die Kutums sind bereit, nur einem starken Anführer zu folgen und glauben Ihnen nicht, sie stimmen nicht zu, an die Oberfläche zu kommen,
+    Sie können ihnen das Gegenteil beweisen, erstellen Sie mit Ihren eigenen Händen einen besseren Rubinschnitt, dafür müssen Sie die Anzahl der Winkel auswählen,
+        das wird größer sein.</string>
+    <string name="dialogtext2_2">Die Kutums sind bereit, die Fertigkeiten anzunehmen, aber sie vertrauen Ihnen vorsichtig, sie werden an die Oberfläche kommen,
+    sobald sie fertig sind, führen sie Sie weiter nach Osten zu den Berner Inselbewohnern.</string>
+    <string name="dialogtext3_1">Helfen Sie den Bernern, sich daran zu erinnern, welche Wesen auf der Erde leben, um dies zu tun
+        wählen Sie das Tier, dessen Größe größer sein wird.</string>
+    <string name="dialogtext3_2">Mit euch kommen die Berner in Windeseile zur zerstörten Burg von Evergarden,
+    sie bitten euch darum, eure Leute zu finden, damit sie die Langeweile der Genesung aufhellen können.</string>
+    <string name="dialogtext4_1">Sagen Sie den Menschen, wie viele Planeten ihre Kreativität spüren können, um dies zu tun
+    wählen Sie den Planeten, der weiter von der Sonne entfernt ist.</string>
+    <string name="dialogtext4_2">Die Wanderer sind bereit, am Morgen zurückzukehren, um die Sache wieder aufzunehmen, und davor
+    sie erzählen Ihnen die Legende von einem verwahrlosten Staat, der sich nach dem Vergessen gebildet hat.</string>
+    <string name="dialogtext5_1">Öffne deinem Ältesten dein Herz und zeige ihm die Epoche, die später erschien.</string>
+    <string name="dialogtext5_2">Die Karandas werden mit Euch zurückkehren und Evergarden vor allen Widrigkeiten bewahren.</string>
+    <string name="dialogtext6_1">Zeigen Sie den Farbriesen der Welt, indem Sie auf die Farbe zeigen, die wärmer ist.</string>
+    <string name="dialogtext6_2">Wenn Sie auf die größten Bewohner achten, sollten Sie sich auch an die Kleinen wenden.
+    Tukars, das Volk des Waldes und der kleinen Geheimnisse. Ohne ihre Hilfe können Sie nicht tun.</string>
+    <string name="dialogtext7_1">Zeigen Sie den Tukaren Ihr Wissen über Waldpflanzen, und wählen Sie aus den vorgeschlagenen Optionen die Pflanze aus,
+        das ist essbar.</string>
+    <string name="dialogtext7_2">Es war eine schwierige Aufgabe, aber Sie haben es geschafft, die Tukars sind mit der geleisteten Arbeit zufrieden und stimmen zu, Ihnen zu helfen.
+    Es bleibt übrig, mit ihnen den Umfang der notwendigen Arbeit zu besprechen.</string>
+    <string name="dialogtext8_1">Vor der Wiederherstellung sollten Sie die Kräfte richtig verteilen, indem Sie das Volumen auswählen, das
+    es wird mehr geben.</string>
+    <string name="dialogtext8_2">Herzlichen Glückwunsch, die minimale Arbeit ist fertig! Jetzt ist es dein Königreich.
+    Sei vorsichtig und hoffe, dass wir dich bald sehen werden.</string>
+
+
+
+</resources>
