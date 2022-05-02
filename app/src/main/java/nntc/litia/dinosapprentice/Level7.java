@@ -77,12 +77,11 @@ public class Level7 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-//        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
-        /* Вызов диалогового окна 2-го уровня (Начало) */
+        /* Вызов диалогового окна 7-го уровня (Начало) */
 
         dialog = new Dialog(this); // Создание нового диалогового окна
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
@@ -137,9 +136,8 @@ public class Level7 extends AppCompatActivity {
 
         dialog.show(); // Показ диалогового окна
 
-        /* Вызов диалогового окна 2-го уровня (Конец) */
+        /* Вызов диалогового окна 7-го уровня (Конец) */
 
-        // -----------------------------------------
         dialogEnd = new Dialog(this); // Создание нового диалогового окна
         dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialogEnd.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
@@ -194,9 +192,6 @@ public class Level7 extends AppCompatActivity {
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
 
-
-        // -----------------------------------------
-
         /* Обработка нажатия кнопки "назад" (Начало) */
         Button button_back = (Button) findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
@@ -232,16 +227,16 @@ public class Level7 extends AppCompatActivity {
         final Animation a = AnimationUtils.loadAnimation(Level7.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
-        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
+        /* Подготовка работы 7-го уровня, левой стороны (Начало) */
         // Генерация случайного числа
         numLeft = random.nextInt(12);
         // Вызов картинки из массива
         img_left.setImageResource(array.images7[numLeft]);
         // Вызов текста из массива
         text_left.setText(array.texts7[numLeft]);
-        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
+        /* Подготовка работы 7-го уровня, левой стороны (Конец) */
 
-        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+        /* Подготовка работы 7-го уровня, правой стороны (Начало) */
         // Генерация случайного числа
         numRight = random.nextInt(12);
 
@@ -255,7 +250,7 @@ public class Level7 extends AppCompatActivity {
         img_right.setImageResource(array.images7[numRight]);
         // Вызов текста из массива
         text_right.setText(array.texts7[numRight]);
-        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+        /* Подготовка работы 7-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
         // Выбор именно setOnTouchListener, потому что нужно обработать два состояния, начало и конец прикосновения

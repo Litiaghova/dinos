@@ -21,14 +21,11 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-
 public class Level3 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
-
     final String TAG = "lifecycle";
-
     private MediaPlayer sound_lvl;
 
     // Переменная - это место в памяти, в котором будет хранится информация
@@ -77,13 +74,11 @@ public class Level3 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-//        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+                                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
-        /* Вызов диалогового окна 2-го уровня (Начало) */
-
+        /* Вызов диалогового окна 3-го уровня (Начало) */
         dialog = new Dialog(this); // Создание нового диалогового окна
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialog.setContentView(R.layout.previewdialog); // Путь к макету даилогового окна
@@ -134,12 +129,9 @@ public class Level3 extends AppCompatActivity {
             }
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
-
         dialog.show(); // Показ диалогового окна
+        /* Вызов диалогового окна 3-го уровня (Конец) */
 
-        /* Вызов диалогового окна 2-го уровня (Конец) */
-
-        // -----------------------------------------
         dialogEnd = new Dialog(this); // Создание нового диалогового окна
         dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialogEnd.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
@@ -194,9 +186,6 @@ public class Level3 extends AppCompatActivity {
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
 
-
-        // -----------------------------------------
-
         /* Обработка нажатия кнопки "назад" (Начало) */
         Button button_back = (Button) findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
@@ -232,16 +221,16 @@ public class Level3 extends AppCompatActivity {
         final Animation a = AnimationUtils.loadAnimation(Level3.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
-        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
+        /* Подготовка работы 3-го уровня, левой стороны (Начало) */
         // Генерация случайного числа от 0-9
         numLeft = random.nextInt(10);
         // Вызов картинки из массива
         img_left.setImageResource(array.images3[numLeft]);
         // Вызов текста из массива
         text_left.setText(array.texts3[numLeft]);
-        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
+        /* Подготовка работы 3-го уровня, левой стороны (Конец) */
 
-        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+        /* Подготовка работы 3-го уровня, правой стороны (Начало) */
         // Генерация случайного числа от 0-9
         numRight = random.nextInt(10);
 
@@ -255,7 +244,7 @@ public class Level3 extends AppCompatActivity {
         img_right.setImageResource(array.images3[numRight]);
         // Вызов текста из массива
         text_right.setText(array.texts3[numRight]);
-        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+        /* Подготовка работы 3-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
         // Выбор именно setOnTouchListener, потому что нужно обработать два состояния, начало и конец прикосновения
@@ -266,10 +255,8 @@ public class Level3 extends AppCompatActivity {
                 /* Условие касания картинки (Начало) */
                 if (event.getAction()==MotionEvent.ACTION_DOWN){
                 // Касание картинки - приложить палец (Начало)
-
                     // Блокировка правой картинки, если коснулись левой
                     img_right.setEnabled(false);
-
                     // Условие показателя верной-неверной картинки
                     if (numLeft>numRight){
                         // Если левое число больше правого, показать картинку "верно"
@@ -279,7 +266,6 @@ public class Level3 extends AppCompatActivity {
                         img_left.setImageResource(R.drawable.img_folse);
                     }
                     // Касание картинки - приложить палец (Конец)
-
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     // Не касание картинки - отпустить палец (Начало)
                     if (numLeft>numRight){
@@ -287,14 +273,12 @@ public class Level3 extends AppCompatActivity {
                         if(count<8){
                             count=count+1;
                         }
-
                         // Закрашивание прогресса серым цветом (Начало)
                         for(int i=0; i<8; i++){
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         // Закрашивание прогресса серым цветом (Конец)
-
                         // Закрашивание прогресса зеленым цветом и определение правильных ответов (Начало)
                         for(int i=0; i<count; i++){
                             TextView tv = findViewById(progress[i]);
@@ -319,7 +303,6 @@ public class Level3 extends AppCompatActivity {
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         // Закрашивание прогресса серым цветом (Конец)
-
                         // Закрашивание прогресса зеленым цветом и определение правильных ответов (Начало)
                         for(int i=0; i<count; i++){
                             TextView tv = findViewById(progress[i]);
@@ -328,25 +311,20 @@ public class Level3 extends AppCompatActivity {
                         // Закрашивание прогресса зеленым цветом и определение правильных ответов (Конец)
                     }
                     // Не касание картинки - отпустить палец (Конец)
-
                     // Если счётчик достиг максимума
                     if (count==8){
                         // Выход из уровня
-
                         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
                         final int level = save.getInt("Level", 1);
                         if (level>3){
-
                         }else {
                             SharedPreferences.Editor editor = save.edit();
                             editor.putInt("Level",4);
                             editor.commit();
                         }
-
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
-
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 3-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numLeft = random.nextInt(10);
                         // Вызов картинки из массива
@@ -355,12 +333,10 @@ public class Level3 extends AppCompatActivity {
                         img_left.startAnimation(a);
                         // Вызов текста из массива
                         text_left.setText(array.texts3[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
-
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 3-го уровня, левой стороны (Конец) */
+                        /* Подготовка работы 3-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numRight = random.nextInt(10);
-
                         // Цикл, с предусловием, проверяющий равенсто чисел (Начало)
                         // Пока левое число равно правому, генерировать новое правое число
                         while (numLeft == numRight){
@@ -374,15 +350,11 @@ public class Level3 extends AppCompatActivity {
                         // Вызов текста из массива
                         text_right.setText(array.texts3[numRight]);
                         /* Подготовка работы 1-го уровня, правой стороны (Конец) */
-
                         // Включение правой картинки
                         img_right.setEnabled(true);
-
                     }
                 }
-
                 /* Условие касания картинки (Конец) */
-
                 return true;
             }
         });
@@ -397,10 +369,8 @@ public class Level3 extends AppCompatActivity {
                 /* Условие касания картинки (Начало) */
                 if (event.getAction()==MotionEvent.ACTION_DOWN){
                     // Касание картинки - приложить палец (Начало)
-
                     // Блокировка левой картинки, если коснулись правой
                     img_left.setEnabled(false);
-
                     // Условие показателя верной-неверной картинки
                     if (numLeft<numRight){
                         // Если левое число больше правого, показать картинку "верно"
@@ -410,7 +380,6 @@ public class Level3 extends AppCompatActivity {
                         img_right.setImageResource(R.drawable.img_folse);
                     }
                     // Касание картинки - приложить палец (Конец)
-
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
                     // Не касание картинки - отпустить палец (Начало)
                     if (numLeft<numRight){
@@ -418,14 +387,12 @@ public class Level3 extends AppCompatActivity {
                         if(count<8){
                             count=count+1;
                         }
-
                         // Закрашивание прогресса серым цветом (Начало)
                         for(int i=0; i<8; i++){
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         // Закрашивание прогресса серым цветом (Конец)
-
                         // Закрашивание прогресса зеленым цветом и определение правильных ответов (Начало)
                         for(int i=0; i<count; i++){
                             TextView tv = findViewById(progress[i]);
@@ -450,7 +417,6 @@ public class Level3 extends AppCompatActivity {
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         // Закрашивание прогресса серым цветом (Конец)
-
                         // Закрашивание прогресса зеленым цветом и определение правильных ответов (Начало)
                         for(int i=0; i<count; i++){
                             TextView tv = findViewById(progress[i]);
@@ -459,11 +425,9 @@ public class Level3 extends AppCompatActivity {
                         // Закрашивание прогресса зеленым цветом и определение правильных ответов (Конец)
                     }
                     // Не касание картинки - отпустить палец (Конец)
-
                     // Если счётчик достиг максимума
                     if (count==8){
                         // Выход из уровня
-
                         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
                         final int level = save.getInt("Level", 1);
                         if (level>3){
@@ -473,11 +437,9 @@ public class Level3 extends AppCompatActivity {
                             editor.putInt("Level",4);
                             editor.commit();
                         }
-
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
-
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 3-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numLeft = random.nextInt(10);
                         // Вызов картинки из массива
@@ -486,9 +448,9 @@ public class Level3 extends AppCompatActivity {
                         img_left.startAnimation(a);
                         // Вызов текста из массива
                         text_left.setText(array.texts3[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        /* Подготовка работы 3-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 3-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-9
                         numRight = random.nextInt(10);
 
@@ -504,16 +466,13 @@ public class Level3 extends AppCompatActivity {
                         img_right.startAnimation(a);
                         // Вызов текста из массива
                         text_right.setText(array.texts3[numRight]);
-                        /* Подготовка работы 2-го уровня, правой стороны (Конец) */
+                        /* Подготовка работы 3-го уровня, правой стороны (Конец) */
 
                         // Включение левой картинки
                         img_left.setEnabled(true);
-
                     }
                 }
-
                 /* Условие касания картинки (Конец) */
-
                 return true;
             }
         });
@@ -539,7 +498,6 @@ public class Level3 extends AppCompatActivity {
         if (sound_lvl != null) {
             sound_lvl.pause();
         }
-
     }
 
     @Override
@@ -571,8 +529,6 @@ public class Level3 extends AppCompatActivity {
         }catch (Exception e){
         }
         // Конец конструкции
-
-
     }
     /* Обработка нажатия системной кнопки "назад" (Конец) */
 }

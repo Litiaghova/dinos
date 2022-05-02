@@ -26,7 +26,7 @@ public class Level7plot1 extends AppCompatActivity {
         sound_plot_2 = MediaPlayer.create(this, R.raw.history_sound_7_lvl);
         sound_plot_2.start();
 
-        Log.d(TAG, "Активити загрузки создано");
+        Log.d(TAG, "Активити 7 загрузки создано");
 
         /* Переключение фонового изображения по таймеру (Начало) */
         Integer[] i = {
@@ -99,25 +99,20 @@ public class Level7plot1 extends AppCompatActivity {
     protected void onStart() {
 
         super.onStart();
-        Log.d(TAG, "Активити загрузки становится видимым");
+        Log.d(TAG, "Активити 7 загрузки становится видимым");
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        Log.d(TAG, "Активити загрузки получает фокус и переходит в состояние onResume");
-        /* Размещение игрового экрана по всему объему (Начало) */
-        Window w = getWindow();
-        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        /* Размещение игрового экрана по всему объему (Конец) */
+        Log.d(TAG, "Активити 7 загрузки получает фокус и переходит в состояние onResume");
 
     }
 
     @Override
     protected void onPause(){
         super.onPause();
-        Log.d(TAG, "Активити загрузки приостановленно и находится в состоянии onPause");
+        Log.d(TAG, "Активити 7 загрузки приостановленно и находится в состоянии onPause");
         if (sound_plot_2 != null) {
             sound_plot_2.pause();
         }
@@ -126,7 +121,7 @@ public class Level7plot1 extends AppCompatActivity {
     @Override
     protected void onStop(){
         super.onStop();
-        Log.d(TAG, "Активити загрузки остановленно и находится в состоянии onStop");
+        Log.d(TAG, "Активити 7 загрузки остановленно и находится в состоянии onStop");
         if (sound_plot_2 != null) {
             sound_plot_2.stop();
         }
@@ -135,7 +130,7 @@ public class Level7plot1 extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        Log.d(TAG, "Активити загрузки уничтожено и находится в состоянии onDestroy");
+        Log.d(TAG, "Активити 7 загрузки уничтожено и находится в состоянии onDestroy");
         if (sound_plot_2 != null) {
             sound_plot_2.stop();
         }

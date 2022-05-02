@@ -21,14 +21,11 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-
 public class Level4 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
-
     final String TAG = "lifecycle";
-
     private MediaPlayer sound_lvl;
 
     // Переменная - это место в памяти, в котором будет хранится информация
@@ -77,20 +74,16 @@ public class Level4 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-//        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
-        /* Вызов диалогового окна 2-го уровня (Начало) */
-
+        /* Вызов диалогового окна 4-го уровня (Начало) */
         dialog = new Dialog(this); // Создание нового диалогового окна
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialog.setContentView(R.layout.previewdialog); // Путь к макету даилогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // Прозрачный фон
         dialog.setCancelable(false); // Окно нальзя закрыть системной кнопкой назад
-
-
 
         // Установка задания в диалоговое окно (Начало)
         TextView textdescription = (TextView)dialog.findViewById(R.id.text1);
@@ -112,7 +105,6 @@ public class Level4 extends AppCompatActivity {
                     finish();
                     // Вернуться назад к выбору уровня (Конец)
                 } catch (Exception e){
-
                 }
                 // Закрытие диалогового окна
                 dialog.dismiss();
@@ -131,12 +123,9 @@ public class Level4 extends AppCompatActivity {
             }
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
-
         dialog.show(); // Показ диалогового окна
+        /* Вызов диалогового окна 4-го уровня (Конец) */
 
-        /* Вызов диалогового окна 2-го уровня (Конец) */
-
-        // -----------------------------------------
         dialogEnd = new Dialog(this); // Создание нового диалогового окна
         dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialogEnd.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
@@ -168,7 +157,6 @@ public class Level4 extends AppCompatActivity {
                     finish();
                     // Вернуться назад к выбору уровня (Конец)
                 } catch (Exception e){
-
                 }
                 // Закрытие диалогового окна
                 dialogEnd.dismiss();
@@ -188,16 +176,12 @@ public class Level4 extends AppCompatActivity {
                     finish();
                 }
                 catch (Exception e){
-
                 }
                 // Закрытие диалогового окна
                 dialogEnd.dismiss();
             }
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
-
-
-        // -----------------------------------------
 
         /* Обработка нажатия кнопки "назад" (Начало) */
         Button button_back = (Button) findViewById(R.id.button_back);
@@ -234,16 +218,16 @@ public class Level4 extends AppCompatActivity {
         final Animation a = AnimationUtils.loadAnimation(Level4.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
-        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
+        /* Подготовка работы 4-го уровня, левой стороны (Начало) */
         // Генерация случайного числа от 0-7
         numLeft = random.nextInt(8);
         // Вызов картинки из массива
         img_left.setImageResource(array.images4[numLeft]);
         // Вызов текста из массива
         text_left.setText(array.texts4[numLeft]);
-        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
+        /* Подготовка работы 4-го уровня, левой стороны (Конец) */
 
-        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+        /* Подготовка работы 4-го уровня, правой стороны (Начало) */
         // Генерация случайного числа от 0-7
         numRight = random.nextInt(8);
 
@@ -257,7 +241,7 @@ public class Level4 extends AppCompatActivity {
         img_right.setImageResource(array.images4[numRight]);
         // Вызов текста из массива
         text_right.setText(array.texts4[numRight]);
-        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+        /* Подготовка работы 4-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
         // Выбор именно setOnTouchListener, потому что нужно обработать два состояния, начало и конец прикосновения
@@ -348,7 +332,7 @@ public class Level4 extends AppCompatActivity {
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
 
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 4-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numLeft = random.nextInt(8);
                         // Вызов картинки из массива
@@ -357,9 +341,9 @@ public class Level4 extends AppCompatActivity {
                         img_left.startAnimation(a);
                         // Вызов текста из массива
                         text_left.setText(array.texts4[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        /* Подготовка работы 4-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 4-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numRight = random.nextInt(8);
 
@@ -379,12 +363,9 @@ public class Level4 extends AppCompatActivity {
 
                         // Включение правой картинки
                         img_right.setEnabled(true);
-
                     }
                 }
-
                 /* Условие касания картинки (Конец) */
-
                 return true;
             }
         });
@@ -479,7 +460,7 @@ public class Level4 extends AppCompatActivity {
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
 
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 4-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numLeft = random.nextInt(8);
                         // Вызов картинки из массива
@@ -488,9 +469,9 @@ public class Level4 extends AppCompatActivity {
                         img_left.startAnimation(a);
                         // Вызов текста из массива
                         text_left.setText(array.texts4[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        /* Подготовка работы 4-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 4-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numRight = random.nextInt(8);
 
@@ -506,16 +487,12 @@ public class Level4 extends AppCompatActivity {
                         img_right.startAnimation(a);
                         // Вызов текста из массива
                         text_right.setText(array.texts4[numRight]);
-                        /* Подготовка работы 2-го уровня, правой стороны (Конец) */
-
+                        /* Подготовка работы 4-го уровня, правой стороны (Конец) */
                         // Включение левой картинки
                         img_left.setEnabled(true);
-
                     }
                 }
-
                 /* Условие касания картинки (Конец) */
-
                 return true;
             }
         });
@@ -573,8 +550,6 @@ public class Level4 extends AppCompatActivity {
         }catch (Exception e){
         }
         // Конец конструкции
-
-
     }
     /* Обработка нажатия системной кнопки "назад" (Конец) */
 }

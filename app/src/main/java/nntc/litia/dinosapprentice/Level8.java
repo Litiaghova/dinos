@@ -76,12 +76,11 @@ public class Level8 extends AppCompatActivity {
 
         /* Размещение игрового экрана по всему объему (Начало) */
         Window w = getWindow();
-//        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
-        /* Вызов диалогового окна 2-го уровня (Начало) */
+        /* Вызов диалогового окна 8-го уровня (Начало) */
 
         dialog = new Dialog(this); // Создание нового диалогового окна
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
@@ -136,9 +135,7 @@ public class Level8 extends AppCompatActivity {
 
         dialog.show(); // Показ диалогового окна
 
-        /* Вызов диалогового окна 2-го уровня (Конец) */
-
-        // -----------------------------------------
+        /* Вызов диалогового окна 8-го уровня (Конец) */
         dialogEnd = new Dialog(this); // Создание нового диалогового окна
         dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); // Скрытие заголовка диалогового окна
         dialogEnd.setContentView(R.layout.dialogend); // Путь к макету даилогового окна
@@ -193,9 +190,6 @@ public class Level8 extends AppCompatActivity {
         });
         /* Кнопка продолжить - диалоговое окно (Конец) */
 
-
-        // -----------------------------------------
-
         /* Обработка нажатия кнопки "назад" (Начало) */
         Button button_back = (Button) findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
@@ -231,16 +225,16 @@ public class Level8 extends AppCompatActivity {
         final Animation a = AnimationUtils.loadAnimation(Level8.this, R.anim.alpha);
         /* Подключение анимации (Конец) */
 
-        /* Подготовка работы 1-го уровня, левой стороны (Начало) */
+        /* Подготовка работы 8-го уровня, левой стороны (Начало) */
         // Генерация случайного числа от 0-7
         numLeft = random.nextInt(8);
         // Вызов картинки из массива
         img_left.setImageResource(array.images8[numLeft]);
         // Вызов текста из массива
         text_left.setText(array.texts8[numLeft]);
-        /* Подготовка работы 1-го уровня, левой стороны (Конец) */
+        /* Подготовка работы 8-го уровня, левой стороны (Конец) */
 
-        /* Подготовка работы 1-го уровня, правой стороны (Начало) */
+        /* Подготовка работы 8-го уровня, правой стороны (Начало) */
         // Генерация случайного числа от 0-7
         numRight = random.nextInt(8);
 
@@ -254,7 +248,7 @@ public class Level8 extends AppCompatActivity {
         img_right.setImageResource(array.images8[numRight]);
         // Вызов текста из массива
         text_right.setText(array.texts8[numRight]);
-        /* Подготовка работы 1-го уровня, правой стороны (Конец) */
+        /* Подготовка работы 8-го уровня, правой стороны (Конец) */
 
         /* Обработка нажатия на левую картинку (Начало) */
         // Выбор именно setOnTouchListener, потому что нужно обработать два состояния, начало и конец прикосновения
@@ -334,7 +328,7 @@ public class Level8 extends AppCompatActivity {
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
 
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 8-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numLeft = random.nextInt(8);
                         // Вызов картинки из массива
@@ -343,9 +337,9 @@ public class Level8 extends AppCompatActivity {
                         img_left.startAnimation(a);
                         // Вызов текста из массива
                         text_left.setText(array.texts8[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        /* Подготовка работы 8-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 8-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numRight = random.nextInt(8);
 
@@ -454,7 +448,7 @@ public class Level8 extends AppCompatActivity {
                         dialogEnd.show(); // Показ диалогового окна
                     } else {
 
-                        /* Подготовка работы 2-го уровня, левой стороны (Начало) */
+                        /* Подготовка работы 8-го уровня, левой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numLeft = random.nextInt(8);
                         // Вызов картинки из массива
@@ -463,9 +457,9 @@ public class Level8 extends AppCompatActivity {
                         img_left.startAnimation(a);
                         // Вызов текста из массива
                         text_left.setText(array.texts8[numLeft]);
-                        /* Подготовка работы 2-го уровня, левой стороны (Конец) */
+                        /* Подготовка работы 8-го уровня, левой стороны (Конец) */
 
-                        /* Подготовка работы 2-го уровня, правой стороны (Начало) */
+                        /* Подготовка работы 8-го уровня, правой стороны (Начало) */
                         // Генерация случайного числа от 0-7
                         numRight = random.nextInt(8);
 
@@ -481,7 +475,7 @@ public class Level8 extends AppCompatActivity {
                         img_right.startAnimation(a);
                         // Вызов текста из массива
                         text_right.setText(array.texts8[numRight]);
-                        /* Подготовка работы 2-го уровня, правой стороны (Конец) */
+                        /* Подготовка работы 8-го уровня, правой стороны (Конец) */
 
                         // Включение левой картинки
                         img_left.setEnabled(true);

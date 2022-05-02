@@ -19,9 +19,9 @@ import java.util.Random;
 import pl.droidsonroids.gif.GifImageView;
 
 public class Level1plot1 extends AppCompatActivity {
-
+    // Переменаня для переключения изображения по таймеру
     static int j = 0;
-
+    // Переменные для хранения звука уровня
     private MediaPlayer sound_plot_1;
 
     @Override
@@ -34,7 +34,6 @@ public class Level1plot1 extends AppCompatActivity {
 
         Log.d(TAG, "Активити загрузки создано");
 
-        /* Переключение фонового изображения по таймеру (Начало) */
         Integer[] i = {
                 R.drawable.plot1,
                 R.drawable.plot2,
@@ -50,14 +49,13 @@ public class Level1plot1 extends AppCompatActivity {
         };
 
         ImageView iview = findViewById(R.id.imageView_message_image);
-
+        /* Переключение фонового изображения по таймеру (Начало) */
         j=0;
         final Handler handler = new Handler();
         handler.post(new Runnable() {
             public void run() {
                 if(j>=i.length)
                     return;
-                //int randomNum = r.nextInt(7);
                 iview.setImageResource(i[j]);
                 j++;
                 handler.postDelayed(this, 13000);
@@ -71,7 +69,7 @@ public class Level1plot1 extends AppCompatActivity {
                                              | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         /* Размещение игрового экрана по всему объему (Конец) */
 
-        /* Обработка нажатия кнопки "назад" в меню (Начало) */
+        /* Кнопка "назад" из загрузки в меню (Начало) */
         Button button_back = (Button) findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,9 +84,9 @@ public class Level1plot1 extends AppCompatActivity {
                 // Конец конструкции
             }
         });
-        /* Обработка нажатия кнопки "назад" в меню (Конец) */
+        /* Кнопка "назад" из загрузки в меню (Конец) */
 
-        /* Обработка нажатия кнопки "назад" в меню (Начало) */
+        /* Кнопка "пропустить" из загрузки к уровню (Начало) */
         Button button_skip = (Button) findViewById(R.id.button_skip);
         button_skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +101,11 @@ public class Level1plot1 extends AppCompatActivity {
                 // Конец конструкции
             }
         });
-        /* Обработка нажатия кнопки "назад" в меню (Конец) */
+        /* Кнопка "пропустить" из загрузки к уровню (Конец) */
     }
 
     @Override
     protected void onStart() {
-
         super.onStart();
         Log.d(TAG, "Активити загрузки становится видимым");
     }
@@ -117,12 +114,6 @@ public class Level1plot1 extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         Log.d(TAG, "Активити загрузки получает фокус и переходит в состояние onResume");
-        /* Размещение игрового экрана по всему объему (Начало) */
-        Window w = getWindow();
-        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        /* Размещение игрового экрана по всему объему (Конец) */
-
     }
 
     @Override

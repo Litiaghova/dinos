@@ -76,9 +76,9 @@ public class Level6plot1 extends AppCompatActivity {
                 // Конец конструкции
             }
         });
-        /* Обработка нажатия кнопки "назад" в меню (Конец) */
+        /* Обработка нажатия кнопки "назад" (Конец) */
 
-        /* Обработка нажатия кнопки "назад" в меню (Начало) */
+        /* Обработка нажатия кнопки "пропустить" в меню (Начало) */
         Button button_skip = (Button) findViewById(R.id.button_skip);
         button_skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +93,7 @@ public class Level6plot1 extends AppCompatActivity {
                 // Конец конструкции
             }
         });
-        /* Обработка нажатия кнопки "назад" в меню (Конец) */
+        /* Обработка нажатия кнопки "пропустить" (Конец) */
     }
 
     @Override
@@ -107,12 +107,6 @@ public class Level6plot1 extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         Log.d(TAG, "Активити загрузки получает фокус и переходит в состояние onResume");
-        /* Размещение игрового экрана по всему объему (Начало) */
-        Window w = getWindow();
-        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        /* Размещение игрового экрана по всему объему (Конец) */
-
     }
 
     @Override

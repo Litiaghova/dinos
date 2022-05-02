@@ -13,11 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class Level2plot1 extends AppCompatActivity {
-
     static int j = 0;
-
     private MediaPlayer sound_plot_2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +25,6 @@ public class Level2plot1 extends AppCompatActivity {
 
         Log.d(TAG, "Активити загрузки создано");
 
-        /* Переключение фонового изображения по таймеру (Начало) */
         Integer[] i = {
                 R.drawable.plot2_1,
                 R.drawable.plot2_3,
@@ -39,7 +35,7 @@ public class Level2plot1 extends AppCompatActivity {
         };
 
         ImageView iview = findViewById(R.id.imageView_message_image);
-
+        /* Переключение фонового изображения по таймеру (Начало) */
         j=0;
         final Handler handler = new Handler();
         handler.post(new Runnable() {
@@ -77,7 +73,7 @@ public class Level2plot1 extends AppCompatActivity {
         });
         /* Обработка нажатия кнопки "назад" в меню (Конец) */
 
-        /* Обработка нажатия кнопки "назад" в меню (Начало) */
+        /* Обработка нажатия кнопки "пропустить" (Начало) */
         Button button_skip = (Button) findViewById(R.id.button_skip);
         button_skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +88,7 @@ public class Level2plot1 extends AppCompatActivity {
                 // Конец конструкции
             }
         });
-        /* Обработка нажатия кнопки "назад" в меню (Конец) */
+        /* Обработка нажатия кнопки "пропустить" (Конец) */
     }
 
     @Override
@@ -107,11 +103,6 @@ public class Level2plot1 extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "Активити загрузки получает фокус и переходит в состояние onResume");
         /* Размещение игрового экрана по всему объему (Начало) */
-        Window w = getWindow();
-        w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        /* Размещение игрового экрана по всему объему (Конец) */
-
     }
 
     @Override
